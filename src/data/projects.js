@@ -1,0 +1,35 @@
+export const projects = [
+  {
+    id: 'projeoo',
+    icon: '💼',
+    title: 'ProjEoo CRM — Plateforme de gestion artisans',
+    description: "CRM complet pour entreprises du bâtiment : gestion clients, chantiers, devis PDF, signature électronique intégrée (YouSign), paiement Stripe, facturation automatique, portail client, notifications temps réel via WebSocket et déploiement Docker multi-conteneurs.",
+    stack: ['React', 'Node.js', 'PostgreSQL', 'Stripe API', 'YouSign', 'Socket.IO', 'Docker', 'Nginx'],
+    status: 'live',
+    featured: true,
+  },
+  {
+    id: 'audit',
+    icon: '🛡️',
+    title: 'Audit & Hardening Infrastructure PME',
+    description: "Audit de sécurité complet d'un réseau d'entreprise, déploiement pfSense, segmentation VLAN, mise en place IDS/IPS, monitoring Zabbix et rapport de conformité.",
+    stack: ['pfSense', 'Zabbix', 'VLAN', 'IDS/IPS', 'VPN'],
+    status: 'done',
+  },
+  {
+    id: 'vps',
+    icon: '☁️',
+    title: 'Déploiement Infrastructure Cloud VPS',
+    description: "Migration et déploiement d'une stack applicative complète sur VPS Linux : Docker Compose, Nginx reverse proxy, SSL automatique Let's Encrypt, sauvegardes automatisées et monitoring.",
+    stack: ['Ubuntu Server', 'Docker', 'Nginx', "Let's Encrypt", 'Bash Scripts'],
+    status: 'live',
+  },
+  {
+    id: 'workflow',
+    icon: '⚡',
+    title: 'Automatisation workflow devis → paiement',
+    description: "Pipeline d'automatisation complet : génération PDF → envoi email → signature électronique → paiement Stripe → émission facture → notification client. Zéro intervention manuelle.",
+    stack: ['Stripe Webhooks', 'YouSign API', 'Mailjet', 'PDFKit', 'Node.js'],
+    status: 'done',
+  },
+]

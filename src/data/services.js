@@ -1,0 +1,45 @@
+export const services = [
+  {
+    id: 'saas',
+    icon: '💼',
+    title: 'Développement SaaS & CRM',
+    description: "Conception et développement d'applications web métiers sur-mesure : CRM complets, plateformes de gestion, tableaux de bord analytiques et workflows automatisés.",
+    tags: ['React', 'Node.js', 'PostgreSQL', 'REST API', 'Socket.IO'],
+    featured: true,
+  },
+  {
+    id: 'security',
+    icon: '🛡️',
+    title: 'Cybersécurité & Audit IT',
+    description: "Audit de sécurité complet de vos systèmes, mise en place de firewalls, détection d'intrusions, hardening serveur et conformité RGPD.",
+    tags: ['pfSense', 'Firewall', 'Monitoring', 'Pentest'],
+  },
+  {
+    id: 'cloud',
+    icon: '☁️',
+    title: 'Infrastructure & Cloud',
+    description: "Déploiement et administration de serveurs Linux, containerisation Docker, configuration Nginx, gestion VPS et pipelines CI/CD.",
+    tags: ['Docker', 'Linux', 'Nginx', 'VPS', 'SSL/TLS'],
+  },
+  {
+    id: 'automation',
+    icon: '⚡',
+    title: 'Automatisation des processus',
+    description: "Automatisation end-to-end de vos workflows : devis → signature électronique → paiement → facturation. Supprimez les tâches manuelles répétitives.",
+    tags: ['Stripe', 'YouSign', 'SMTP', 'Webhooks'],
+  },
+  {
+    id: 'api',
+    icon: '🔌',
+    title: 'Intégration API & Connecteurs',
+    description: "Connexion et orchestration de vos outils métiers via APIs professionnelles. Stripe, signature électronique, emails transactionnels, SMS, webhooks.",
+    tags: ['Stripe API', 'REST', 'OAuth2', 'Mailjet'],
+  },
+  {
+    id: 'sysadmin',
+    icon: '🌐',
+    title: 'Administration Systèmes & Réseaux',
+    description: "Configuration et maintenance de réseaux d'entreprise, gestion des accès, administration Active Directory, VLAN, VPN et supervision continue.",
+    tags: ['Sysadmin', 'VLAN', 'VPN', 'Active Directory'],
+  },
+]
