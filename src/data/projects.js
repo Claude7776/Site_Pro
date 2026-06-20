@@ -2,7 +2,7 @@ export const projects = [
   {
     id: 'projeoo',
     icon: '💼',
-    title: 'ProjEoo CRM — Plateforme de gestion artisans',
+    title: 'CRM — Plateforme de gestion artisans',
     description: "CRM complet pour entreprises du bâtiment : gestion clients, chantiers, devis PDF, signature électronique intégrée (YouSign), paiement Stripe, facturation automatique, portail client, notifications temps réel via WebSocket et déploiement Docker multi-conteneurs.",
     stack: ['React', 'Node.js', 'PostgreSQL', 'Stripe API', 'YouSign', 'Socket.IO', 'Docker', 'Nginx'],
     status: 'live',
