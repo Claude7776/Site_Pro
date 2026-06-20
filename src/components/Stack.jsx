@@ -1,25 +1,30 @@
 import { stackCategories } from '../data/stack'
+import TechLogo from './TechLogo'
 
 export default function Stack() {
   return (
     <section id="stack">
       <div className="container">
-        <div className="fade-up">
+        <div className="fade-up" style={{ textAlign: 'center' }}>
           <div className="tag">Stack technique</div>
           <h2 className="section-title">
-            Des outils de <span className="gradient-text">niveau production</span>
+            Mes <span className="gradient-text">technologies</span>
           </h2>
-          <p className="section-sub">
-            Notre écosystème technologique couvre chaque couche de votre système d'information.
+          <p className="section-sub" style={{ margin: '0 auto 48px' }}>
+            Un écosystème complet maîtrisé de bout en bout — du système d'exploitation à l'application.
           </p>
         </div>
-        <div className="stack-grid fade-up">
+
+        <div className="tech-bento fade-up">
           {stackCategories.map((cat) => (
-            <div className="stack-category" key={cat.id}>
-              <h4>{cat.title}</h4>
-              <div className="skill-tags">
-                {cat.tags.map((t) => (
-                  <span className="skill-tag" key={t}>{t}</span>
+            <div className="tech-bento-card" key={cat.id}>
+              <h4 className="tech-bento-title">{cat.title}</h4>
+              <div className="tech-logo-grid">
+                {cat.techs.map((name) => (
+                  <div className="tech-logo-item" key={name}>
+                    <TechLogo name={name} size={36} />
+                    <span className="tech-logo-label">{name}</span>
+                  </div>
                 ))}
               </div>
             </div>

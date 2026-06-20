@@ -1,4 +1,16 @@
 import Logo from './Logo'
+import { SOCIAL_SVG } from './TechLogo'
+
+function SocialIcon({ type, href, label }) {
+  const s = SOCIAL_SVG[type]
+  return (
+    <a href={href} className="social-link" aria-label={label} target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="white">
+        <path d={s.path} />
+      </svg>
+    </a>
+  )
+}
 
 export default function Footer() {
   return (
@@ -27,9 +39,9 @@ export default function Footer() {
               CEO : <span style={{ color: 'var(--sky-light)', fontWeight: 600 }}>Claude Medine Gambigha</span>
             </p>
             <div className="footer-social">
-              <a href="#" className="social-link" aria-label="LinkedIn">in</a>
-              <a href="#" className="social-link" aria-label="GitHub">gh</a>
-              <a href="#" className="social-link" aria-label="Twitter">𝕏</a>
+              <SocialIcon type="linkedin" href="https://linkedin.com/company/skyblue-corp" label="LinkedIn" />
+              <SocialIcon type="github" href="https://github.com/Claude7776" label="GitHub" />
+              <SocialIcon type="twitter" href="#" label="Twitter / X" />
             </div>
           </div>
 
