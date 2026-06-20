@@ -32,4 +32,22 @@ export const projects = [
     stack: ['Stripe Webhooks', 'YouSign API', 'Mailjet', 'PDFKit', 'Node.js'],
     status: 'done',
   },
+  {
+    id: 'soc',
+    icon: '🖥️',
+    title: 'SOC Command Center — Dashboard de supervision',
+    description: "Dashboard de supervision SOC permettant de surveiller en temps réel les activités des comptes, les événements systèmes et les indicateurs de sécurité, afin de détecter rapidement les comportements suspects et les anomalies.",
+    stack: ['SOC', 'Monitoring', 'SIEM', 'Logs', 'Alerting', 'Dashboard'],
+    status: 'live',
+    github: 'https://github.com/Claude7776/SOC-Command-Center',
+  },
+  {
+    id: 'securevault',
+    icon: '🔐',
+    title: 'SecureVault — Coffre-fort numérique en C',
+    description: "Coffre-fort numérique développé en C, conçu pour chiffrer et déchiffrer des fichiers de manière sécurisée. Implémentation bas-niveau des algorithmes de chiffrement avec gestion rigoureuse de la mémoire.",
+    stack: ['C', 'Chiffrement', 'AES', 'Cryptographie', 'Sécurité fichiers'],
+    status: 'done',
+    github: 'https://github.com/Claude7776/securevault',
+  },
 ]

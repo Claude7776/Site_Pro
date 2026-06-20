@@ -233,6 +233,14 @@ nav.main-nav .inner { display: flex; align-items: center; justify-content: space
 .project-body p { font-size:.88rem; color:var(--text-muted); line-height:1.6; margin-bottom:16px; }
 .project-stack { display:flex; flex-wrap:wrap; gap:6px; }
 .pstack { font-size:.72rem; font-weight:600; background:var(--bg3); border:1px solid var(--border); color:var(--sky-light); padding:3px 10px; border-radius:6px; }
+.project-github-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-top: 14px; font-size: .78rem; font-weight: 600;
+  color: var(--sky); border: 1px solid var(--border2);
+  background: var(--sky-glow); border-radius: 8px;
+  padding: 5px 12px; transition: var(--transition);
+}
+.project-github-link:hover { background: rgba(56,189,248,.25); transform: translateY(-1px); }
 .project-card.featured-project { grid-column:span 2; display:grid; grid-template-columns:1fr 1fr; }
 .featured-project .project-header { border-bottom:none; border-right:1px solid var(--border); padding:36px; display:flex; flex-direction:column; align-items:flex-start; justify-content:space-between; min-height:200px; }
 .featured-project .project-body { padding:36px; }
