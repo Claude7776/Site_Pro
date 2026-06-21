@@ -11,6 +11,9 @@ const techs = [
   { icon: '☁️', label: 'VPS / Hostinger' },
   { icon: '🔒', label: 'SSL / Nginx' },
   { icon: '📊', label: 'MongoDB' },
+  { icon: '🛍️', label: 'Shopify' },
+  { icon: '📈', label: 'Google Analytics' },
+  { icon: '🔍', label: 'Search Console' },
 ]
 
 export default function TechBar() {

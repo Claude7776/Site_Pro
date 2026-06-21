@@ -40,6 +40,11 @@ export const stackCategories = [
     techs: ['Stripe', 'REST API', 'Webhooks', 'n8n'],
   },
   {
+    id: 'ecommerce',
+    title: 'E-COMMERCE & SEO',
+    techs: ['Shopify', 'Google Analytics', 'Google Search Console', 'GTM', 'SEO'],
+  },
+  {
     id: 'callcenter',
     title: 'COMMUNICATION & CALL CENTER',
     techs: ['Vicibox', 'Asterisk', 'SIP', 'Predictive Dialing', 'Call Recording', 'IVR'],
