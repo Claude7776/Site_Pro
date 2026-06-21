@@ -2,12 +2,12 @@ export const articles = [
   {
     id: 'soc-dashboard',
     category: 'Cybersécurité',
-    title: 'Construire un SOC Command Center avec des outils open-source',
-    date: '2026-05-15',
+    title: 'Le Gardien des Systèmes — Dashboard Splunk SOC avec Sysmon',
+    date: '2026-01-01',
     excerpt:
-      "Suricata, ELK Stack, Grafana : comment j'ai assemblé un tableau de bord SOC complet sans budget propriétaire. Architecture, alertes et tuning des règles de détection.",
+      "Score de sécurité global, détection brute-force, surveillance Active Directory et intégration Sysmon avancée (EventIDs 1, 3, 10, 11) — tout en dark theme dans un seul dashboard Splunk. Quality Gate SonarQube : PASSED ✅",
     link: 'https://github.com/Claude7776/SOC-Command-Center',
-    tags: ['SOC', 'ELK Stack', 'Suricata', 'Grafana'],
+    tags: ['Splunk', 'Sysmon', 'SOC', 'Windows Security'],
   },
   {
     id: 'n8n-automation',
