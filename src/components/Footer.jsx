@@ -39,9 +39,8 @@ export default function Footer() {
               CEO : <span style={{ color: 'var(--sky-light)', fontWeight: 600 }}>Claude Medine Gambigha</span>
             </p>
             <div className="footer-social">
-              <SocialIcon type="linkedin" href="https://linkedin.com/company/skyblue-corp" label="LinkedIn" />
+              <SocialIcon type="linkedin" href="https://linkedin.com/company/skyblue-corporation" label="LinkedIn" />
               <SocialIcon type="github" href="https://github.com/Claude7776" label="GitHub" />
-              <SocialIcon type="twitter" href="#" label="Twitter / X" />
             </div>
           </div>
 
@@ -70,16 +69,16 @@ export default function Footer() {
           <div className="footer-col">
             <h5>Contact</h5>
             <ul>
-              <li><a href="mailto:contact@skyblue-corp.io">contact@skyblue-corp.io</a></li>
-              <li><a href="#">LinkedIn</a></li>
-              <li><a href="#">Réserver un appel</a></li>
+              <li><a href="codecld@proton.me">contact@skyblue-corp.io</a></li>
+              <li><a href="https://linkedin.com/company/skyblue-corporation">LinkedIn</a></li>
+              <li><a href="tel:+212690565512">Réserver un appel</a></li>
             </ul>
           </div>
         </div>
 
         <div className="footer-bottom">
           <span>© 2026 Sky Blue Corporation — CEO : Claude Medine Gambigha. Tous droits réservés.</span>
-          <span>Conçu &amp; développé par <a href="#hero" style={{ color: '#5BAFD6' }}>Sky Blue Corp</a></span>
+          <span>Conçu &amp; développé par <a href="#hero" style={{ color: '#5BAFD6' }}>Sky Blue Corporation</a></span>
         </div>
       </div>
     </footer>

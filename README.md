@@ -17,6 +17,8 @@ Le site a été conçu pour offrir une présentation claire et moderne de l'entr
 - HTML5
 - CSS3
 - JavaScript
+- React
+- vite
 
 ## 🚀 Installation
 
@@ -32,7 +34,8 @@ Accédez au dossier :
 cd Site_Pro
 ```
 
-Ouvrez ensuite le fichier `index.html` dans votre navigateur.
+Ouvrez ensuite lancé `npm run dev -- --port 5173 &
+sleep 2 && curl -s http://localhost:5173 | head -5 dans votre terminal celà ouv.
 
 ## 🎯 Objectif
 
