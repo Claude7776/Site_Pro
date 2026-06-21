@@ -1,5 +1,20 @@
 import { projects } from '../data/projects'
 
+function Screenshot({ src, redact = [] }) {
+  return (
+    <div className="project-screenshot">
+      <img src={src} alt="Aperçu du projet" />
+      {redact.map((r, i) => (
+        <div
+          key={i}
+          className="project-redact"
+          style={{ top: r.top, left: r.left, width: r.width, height: r.height }}
+        />
+      ))}
+    </div>
+  )
+}
+
 export default function Projects() {
   return (
     <section id="projects">
@@ -20,15 +35,25 @@ export default function Projects() {
               key={p.id}
               className={`project-card${p.featured ? ' featured-project' : ''}`}
             >
-              <div className="project-header">
-                <div className="project-icon-wrap">{p.icon}</div>
-                <div style={p.featured ? { marginTop: 'auto' } : undefined}>
+              {p.screenshot ? (
+                <Screenshot src={p.screenshot} redact={p.redact} />
+              ) : (
+                <div className="project-header">
+                  <div className="project-icon-wrap">{p.icon}</div>
+                  <div style={p.featured ? { marginTop: 'auto' } : undefined}>
+                    <span className={`project-status ${p.status === 'live' ? 'status-live' : 'status-done'}`}>
+                      {p.status === 'live' ? 'En production' : 'Livré'}
+                    </span>
+                  </div>
+                </div>
+              )}
+              <div className="project-body">
+                <div className="project-body-top">
+                  <div className="project-icon-wrap" style={{ width: 36, height: 36, fontSize: '1rem' }}>{p.icon}</div>
                   <span className={`project-status ${p.status === 'live' ? 'status-live' : 'status-done'}`}>
                     {p.status === 'live' ? 'En production' : 'Livré'}
                   </span>
                 </div>
-              </div>
-              <div className="project-body">
                 <h3>{p.title}</h3>
                 <p>{p.description}</p>
                 <div className="project-stack">

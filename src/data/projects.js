@@ -39,6 +39,11 @@ export const projects = [
     description: "Création complète d'une boutique Shopify pour une enseigne de prêt-à-porter italien : configuration du thème, catalogue produits, intégration paiement, mise en place Google Analytics 4, Google Search Console et optimisation SEO on-page.",
     stack: ['Shopify', 'Google Analytics 4', 'Search Console', 'SEO', 'GTM'],
     status: 'live',
+    screenshot: '/shopify-masha.png',
+    redact: [
+      { top: '0%',  left: '0%',   width: '100%', height: '5.5%' },
+      { top: '5.5%', left: '0%',  width: '23%',  height: '14%'  },
+    ],
   },
   {
     id: 'soc',
