@@ -16,7 +16,7 @@ export default function Testimonials() {
           </p>
         </div>
         <div className="testi-grid">
-          {testimonials.map((t, i) => (
+          {testimonials.filter((t) => !t.pending).map((t, i) => (
             <div className="testi-card fade-up" key={i}>
               <div className="testi-stars">{stars}</div>
               <p className="testi-text">"{t.quote}"</p>

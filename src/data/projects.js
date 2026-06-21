@@ -33,6 +33,14 @@ export const projects = [
     status: 'done',
   },
   {
+    id: 'masha',
+    icon: '👗',
+    title: 'Casa di Masha — Boutique Mode Italienne',
+    description: "Création complète d'une boutique Shopify pour une enseigne de prêt-à-porter italien : configuration du thème, catalogue produits, intégration paiement, mise en place Google Analytics 4, Google Search Console et optimisation SEO on-page.",
+    stack: ['Shopify', 'Google Analytics 4', 'Search Console', 'SEO', 'GTM'],
+    status: 'live',
+  },
+  {
     id: 'soc',
     icon: '👽',
     title: 'Le Gardien des Systèmes — SOC Dashboard Splunk',

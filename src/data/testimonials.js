@@ -20,4 +20,14 @@ export const testimonials = [
     company: 'Startup — France',
     avatar: 'CE',
   },
+  // ── En attente ──────────────────────────────────────────────────────────────
+  // Témoignage Casa di Masha : à compléter une fois reçu.
+  // Changer pending à false et remplir quote/author pour l'afficher.
+  {
+    pending: true,
+    quote: '',
+    author: 'Propriétaire',
+    company: 'Casa di Masha — Boutique Mode Italienne',
+    avatar: 'CM',
+  },
 ]
