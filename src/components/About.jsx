@@ -26,6 +26,45 @@ const values = [
   },
 ]
 
+const timeline = [
+  {
+    year: '2019',
+    title: 'Systèmes Linux & Réseaux',
+    desc: 'Déploiement de serveurs Ubuntu, configuration réseau, premiers scripts Bash en production.',
+    color: 'var(--sky)',
+  },
+  {
+    year: '2020',
+    title: 'Infrastructure & Active Directory',
+    desc: "pfSense, VLANs, Active Directory — mise en place d'infrastructures complètes pour PME.",
+    color: 'var(--blue)',
+  },
+  {
+    year: '2021',
+    title: 'Développement Full-Stack',
+    desc: 'React, Node.js, MongoDB. Premières applications SaaS déployées sur VPS avec Nginx.',
+    color: 'var(--violet)',
+  },
+  {
+    year: '2022',
+    title: 'Call Center & Téléphonie IP',
+    desc: "Déploiement Asterisk/Vicibox, intégration SIP, IVR et enregistrement d'appels pour BPO.",
+    color: 'var(--sky)',
+  },
+  {
+    year: '2023',
+    title: 'Cybersécurité & SOC',
+    desc: 'TryHackMe, Hack The Box, construction du SOC Command Center — détection de menaces et réponse aux incidents.',
+    color: '#22c55e',
+  },
+  {
+    year: '2024',
+    title: 'Fondation Sky Blue Corporation',
+    desc: 'Création officielle. Premiers contrats en conseil IT, développement SaaS et automatisation de processus.',
+    color: '#f59e0b',
+  },
+]
+
 export default function About() {
   const fillRefs = useRef([])
   const sectionRef = useRef(null)
@@ -111,6 +150,28 @@ export default function About() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+
+        {/* Career Timeline */}
+        <div className="timeline-section fade-up">
+          <div className="timeline-head">
+            <div className="tag">Parcours</div>
+            <h3 className="timeline-title">
+              Une progression <span className="gradient-text">technique solide.</span>
+            </h3>
+          </div>
+          <div className="timeline">
+            {timeline.map((t, i) => (
+              <div className="timeline-item" key={i}>
+                <div className="timeline-year" style={{ color: t.color }}>{t.year}</div>
+                <div className="timeline-dot" style={{ background: t.color, boxShadow: `0 0 12px ${t.color}` }} />
+                <div className="timeline-content">
+                  <h4>{t.title}</h4>
+                  <p>{t.desc}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

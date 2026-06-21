@@ -1,4 +1,37 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
+
+function CountUp({ target, suffix = '', duration = 1600 }) {
+  const [val, setVal] = useState(0)
+  const ref = useRef(null)
+  const started = useRef(false)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting || started.current) return
+        started.current = true
+        observer.disconnect()
+        const start = Date.now()
+        const tick = () => {
+          const p = Math.min((Date.now() - start) / duration, 1)
+          const ease = 1 - Math.pow(1 - p, 3)
+          setVal(Math.round(ease * target))
+          if (p < 1) requestAnimationFrame(tick)
+        }
+        requestAnimationFrame(tick)
+      },
+      { threshold: 0.5 }
+    )
+    if (ref.current) observer.observe(ref.current)
+    return () => observer.disconnect()
+  }, [target, duration])
+
+  return (
+    <span ref={ref} className="stat-num">
+      {val}{suffix}
+    </span>
+  )
+}
 
 export default function Hero() {
   const cursorRef = useRef(null)
@@ -13,9 +46,7 @@ export default function Hero() {
       lastLine.appendChild(cursor)
       cursorRef.current = cursor
     }
-    return () => {
-      if (cursorRef.current) cursorRef.current.remove()
-    }
+    return () => { if (cursorRef.current) cursorRef.current.remove() }
   }, [])
 
   return (
@@ -45,15 +76,15 @@ export default function Hero() {
             </div>
             <div className="hero-stats">
               <div className="stat-item">
-                <span className="stat-num">15+</span>
+                <CountUp target={15} suffix="+" />
                 <span className="stat-label">Projets livrés</span>
               </div>
               <div className="stat-item">
-                <span className="stat-num">100%</span>
+                <CountUp target={100} suffix="%" />
                 <span className="stat-label">Satisfaction client</span>
               </div>
               <div className="stat-item">
-                <span className="stat-num">8+</span>
+                <CountUp target={8} suffix="+" />
                 <span className="stat-label">Domaines d'expertise</span>
               </div>
             </div>
