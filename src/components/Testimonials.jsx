@@ -1,9 +1,10 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 const stars = '★★★★★'
 
 export default function Testimonials() {
   const [items, setItems] = useState([])
+  const gridRef = useRef(null)
 
   useEffect(() => {
     fetch('/testimonials.json')
@@ -12,7 +13,23 @@ export default function Testimonials() {
       .catch(() => {})
   }, [])
 
-  if (!items.length) return null
+  // Observer local pour les cartes chargées dynamiquement
+  useEffect(() => {
+    if (!items.length || !gridRef.current) return
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible')
+            observer.unobserve(e.target)
+          }
+        })
+      },
+      { threshold: 0.08 }
+    )
+    gridRef.current.querySelectorAll('.fade-up').forEach((el) => observer.observe(el))
+    return () => observer.disconnect()
+  }, [items])
 
   return (
     <section id="testimonials">
@@ -26,7 +43,8 @@ export default function Testimonials() {
             Des avis anonymisés à la demande de nos clients — la confidentialité fait partie du service.
           </p>
         </div>
-        <div className="testi-grid">
+
+        <div className="testi-grid" ref={gridRef}>
           {items.map((t, i) => (
             <div className="testi-card fade-up" key={i}>
               <div className="testi-stars">{stars}</div>
