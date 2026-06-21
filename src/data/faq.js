@@ -13,7 +13,7 @@ export const faqs = [
   },
   {
     q: "Vous travaillez seul ou avec une équipe ?",
-    a: "Sky Blue Corporation s'appuie sur un réseau d'experts freelance et collabore avec des étudiants talentueux des écoles 1337 (Maroc), 42 Paris et 42 Belgique. Pour les projets complexes, nous constituons une équipe dédiée adaptée aux besoins.",
+    a: "Sky Blue Corporation s'appuie sur un réseau de seniors expérimentés dans chaque domaine IT (développement, cybersécurité, infrastructure, DevOps, réseaux...) et collabore avec des étudiants talentueux des écoles 1337 (Maroc), 42 Paris et 42 Belgique. Pour chaque projet, nous constituons l'équipe la plus adaptée.",
   },
   {
     q: "Pouvez-vous intervenir sur un système existant ou uniquement repartir de zéro ?",
