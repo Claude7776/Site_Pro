@@ -1,0 +1,44 @@
+<svg width="200" height="200" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0ea5e9"/>
+      <stop offset="55%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#1e1b4b"/>
+    </linearGradient>
+    <radialGradient id="atm" cx="50%" cy="30%" r="55%">
+      <stop offset="0%" stop-color="#7dd3fc" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="3.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="100" height="100" rx="22" fill="url(#bg)"/>
+  <rect width="100" height="100" rx="22" fill="url(#atm)"/>
+  <rect x="1.5" y="1.5" width="97" height="97" rx="21" stroke="rgba(255,255,255,0.14)" stroke-width="1.5" fill="none"/>
+
+  <line x1="50" y1="8"  x2="50" y2="92" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <line x1="8"  y1="50" x2="92" y2="50" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+
+  <ellipse cx="50" cy="30" rx="15" ry="5" stroke="rgba(255,255,255,0.18)" stroke-width="1" fill="none" transform="rotate(-18 50 30)"/>
+
+  <line x1="50" y1="30" x2="24" y2="62" stroke="rgba(255,255,255,0.38)" stroke-width="1.8" stroke-linecap="round"/>
+  <line x1="50" y1="30" x2="76" y2="62" stroke="rgba(255,255,255,0.38)" stroke-width="1.8" stroke-linecap="round"/>
+  <line x1="50" y1="30" x2="35" y2="76" stroke="rgba(255,255,255,0.22)" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="50" y1="30" x2="65" y2="76" stroke="rgba(255,255,255,0.22)" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="24" y1="62" x2="76" y2="62" stroke="rgba(255,255,255,0.20)" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="24" y1="62" x2="35" y2="76" stroke="rgba(255,255,255,0.18)" stroke-width="1" stroke-linecap="round"/>
+  <line x1="76" y1="62" x2="65" y2="76" stroke="rgba(255,255,255,0.18)" stroke-width="1" stroke-linecap="round"/>
+
+  <circle cx="24" cy="62" r="5" fill="rgba(255,255,255,0.82)"/>
+  <circle cx="76" cy="62" r="5" fill="rgba(255,255,255,0.82)"/>
+  <circle cx="35" cy="76" r="3.5" fill="rgba(255,255,255,0.55)"/>
+  <circle cx="65" cy="76" r="3.5" fill="rgba(255,255,255,0.55)"/>
+
+  <circle cx="50" cy="30" r="11" fill="rgba(255,255,255,0.18)" filter="url(#glow)"/>
+  <circle cx="50" cy="30" r="6.5" fill="white" filter="url(#glow)"/>
+  <circle cx="50" cy="30" r="3.5" fill="white"/>
+  <circle cx="48" cy="28" r="1.5" fill="rgba(255,255,255,0.9)"/>
+</svg>
