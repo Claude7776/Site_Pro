@@ -13,7 +13,7 @@ export const faqs = [
   },
   {
     q: "Vous travaillez seul ou avec une équipe ?",
-    a: "Sky Blue Corporation est structurée autour d'un noyau d'experts freelance mobilisables selon les besoins du projet. Pour les projets complexes, nous constituons une équipe dédiée.",
+    a: "Sky Blue Corporation s'appuie sur un réseau d'experts freelance et collabore avec des étudiants talentueux des écoles 1337 (Maroc), 42 Paris et 42 Belgique. Pour les projets complexes, nous constituons une équipe dédiée adaptée aux besoins.",
   },
   {
     q: "Pouvez-vous intervenir sur un système existant ou uniquement repartir de zéro ?",
