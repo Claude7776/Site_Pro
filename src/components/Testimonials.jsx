@@ -1,8 +1,19 @@
-import { testimonials } from '../data/testimonials'
+import { useState, useEffect } from 'react'
 
 const stars = '★★★★★'
 
 export default function Testimonials() {
+  const [items, setItems] = useState([])
+
+  useEffect(() => {
+    fetch('/testimonials.json')
+      .then((r) => r.json())
+      .then((data) => setItems(data.filter((t) => !t.pending)))
+      .catch(() => {})
+  }, [])
+
+  if (!items.length) return null
+
   return (
     <section id="testimonials">
       <div className="container">
@@ -16,7 +27,7 @@ export default function Testimonials() {
           </p>
         </div>
         <div className="testi-grid">
-          {testimonials.filter((t) => !t.pending).map((t, i) => (
+          {items.map((t, i) => (
             <div className="testi-card fade-up" key={i}>
               <div className="testi-stars">{stars}</div>
               <p className="testi-text">"{t.quote}"</p>
