@@ -67,6 +67,6 @@ export const stackCategories = [
   {
     id: 'lang',
     title: 'LANGAGES',
-    techs: ['Python', 'JavaScript', 'Bash'],
+    techs: ['Python', 'JavaScript', 'Bash', 'C', 'C++', 'Java', 'PHP', 'HTML', 'CSS'],
   },
 ]

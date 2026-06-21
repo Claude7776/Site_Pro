@@ -176,6 +176,12 @@ const BADGES = {
   'Automation':        { bg: '#D97706', fg: '#fff', abbr: 'AU' },
   'Scripts':           { bg: '#374151', fg: '#38bdf8', abbr: '>_' },
   'Bash':              { bg: '#1C1C1C', fg: '#4AF626', abbr: 'sh' },
+  'C':                 { bg: '#283593', fg: '#fff',    abbr: 'C'  },
+  'C++':               { bg: '#00599C', fg: '#fff',    abbr: 'C++'},
+  'Java':              { bg: '#E76F00', fg: '#fff',    abbr: 'Jv' },
+  'PHP':               { bg: '#777BB4', fg: '#fff',    abbr: 'PHP'},
+  'HTML':              { bg: '#E34F26', fg: '#fff',    abbr: 'H5' },
+  'CSS':               { bg: '#1572B6', fg: '#fff',    abbr: 'CSS'},
 }
 
 function Badge({ name, size }) {
