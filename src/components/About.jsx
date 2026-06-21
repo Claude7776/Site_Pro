@@ -92,7 +92,9 @@ export default function About() {
           <div className="about-visual fade-up">
             <div className="about-card">
               <div className="profile-row">
-                <div className="profile-avatar">CG</div>
+                <div className="profile-avatar">
+                  <img src="/claude.jpg" alt="Claude Medine Gambigha" className="profile-photo" />
+                </div>
                 <div className="profile-info">
                   <h4>Claude Medine Gambigha</h4>
                   <span>CEO &amp; Architecte Solutions IT</span>
