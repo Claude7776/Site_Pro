@@ -137,11 +137,24 @@ export default function MatrixBackground() {
 
     init()
     animId = requestAnimationFrame(draw)
-    window.addEventListener('resize', init)
+
+    let resizeTimer
+    let lastWidth = window.innerWidth
+    function onResize() {
+      clearTimeout(resizeTimer)
+      resizeTimer = setTimeout(() => {
+        if (window.innerWidth !== lastWidth) {
+          lastWidth = window.innerWidth
+          init()
+        }
+      }, 250)
+    }
+    window.addEventListener('resize', onResize)
 
     return () => {
       cancelAnimationFrame(animId)
-      window.removeEventListener('resize', init)
+      clearTimeout(resizeTimer)
+      window.removeEventListener('resize', onResize)
     }
   }, [])
 
