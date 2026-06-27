@@ -565,6 +565,7 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:56px
   --text-dim:  #4a6a8a;
 }
 [data-theme="light"] body { background:var(--bg); color:var(--text); }
+[data-theme="light"] canvas[aria-hidden] { opacity:0.06; }
 [data-theme="light"] body::before { opacity:.15; }
 [data-theme="light"] nav.main-nav { background:rgba(240,246,255,.88); }
 [data-theme="light"] nav.main-nav.scrolled { background:rgba(240,246,255,.97); }

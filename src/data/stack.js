@@ -22,7 +22,7 @@ export const stackCategories = [
   {
     id: 'devops',
     title: 'DEVOPS & CLOUD',
-    techs: ['Docker', 'GitHub Actions', 'VPS', 'Vercel', 'Hostinger'],
+    techs: ['Docker', 'GitHub Actions', 'VPS', 'Vercel', 'Hostinger', 'Dokploy', 'Uptime Robot'],
   },
   {
     id: 'dev',

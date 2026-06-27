@@ -17,6 +17,7 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import BackToTop from './components/BackToTop'
 import Chatbot from './components/Chatbot'
+import MatrixBackground from './components/MatrixBackground'
 
 export default function App() {
   const [loading, setLoading] = useState(() => !sessionStorage.getItem('loaded'))
@@ -47,6 +48,7 @@ export default function App() {
 
   return (
     <>
+      <MatrixBackground />
       <BackToTop />
       <Navbar />
       <main>
