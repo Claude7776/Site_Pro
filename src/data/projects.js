@@ -53,6 +53,11 @@ export const projects = [
     stack: ['Splunk', 'Sysmon', 'Windows Security', 'Active Directory', 'SOC', 'SIEM'],
     status: 'live',
     github: 'https://github.com/Claude7776/SOC-Command-Center',
+    screenshot: '/soc-dashboard.png',
+    redact: [
+      { top: '0%',  left: '0%',  width: '100%', height: '14%' },
+      { top: '83%', left: '68%', width: '32%',  height: '17%' },
+    ],
   },
   {
     id: 'securevault',
