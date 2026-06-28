@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import Logo from './Logo'
 import { SOCIAL_SVG } from './TechLogo'
 
@@ -77,8 +78,12 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <span>© 2026 Sky Blue Corporation — CEO : Claude Medine Gambigha. Tous droits réservés.</span>
-          <span>Conçu &amp; développé par <a href="#hero" style={{ color: '#5BAFD6' }}>Sky Blue Corporation</a></span>
+          <span>© 2026 Sky Blue Corporation — Claude Medine Gambigha. Tous droits réservés.</span>
+          <div className="footer-legal-links">
+            <Link to="/mentions-legales">Mentions légales</Link>
+            <Link to="/politique-confidentialite">Confidentialité</Link>
+            <Link to="/cgv">CGV</Link>
+          </div>
         </div>
       </div>
     </footer>

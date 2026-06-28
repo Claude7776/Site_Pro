@@ -1,4 +1,8 @@
 import { useEffect, useState } from 'react'
+import { Routes, Route } from 'react-router-dom'
+import MentionsLegales from './components/legal/MentionsLegales'
+import Confidentialite from './components/legal/Confidentialite'
+import CGV from './components/legal/CGV'
 import Loader from './components/Loader'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
@@ -48,7 +52,11 @@ export default function App() {
   if (loading) return <Loader onDone={handleLoaderDone} />
 
   return (
-    <>
+    <Routes>
+      <Route path="/mentions-legales"         element={<MentionsLegales />} />
+      <Route path="/politique-confidentialite" element={<Confidentialite />} />
+      <Route path="/cgv"                       element={<CGV />} />
+      <Route path="*" element={<>
       <MatrixBackground />
       <BackToTop />
       <Navbar />
@@ -70,6 +78,7 @@ export default function App() {
       </main>
       <Footer />
       <Chatbot />
-    </>
+    </>} />
+    </Routes>
   )
 }
