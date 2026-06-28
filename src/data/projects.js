@@ -103,15 +103,10 @@ export const projects = [
     stack: ['n8n', 'DGSSI', 'Telegram', 'Web Scraping', 'SOC', 'Veille Cyber', 'Automatisation'],
     status: 'live',
     linkedin: 'https://www.linkedin.com/feed/update/urn:li:activity:7421616101211635713/',
-    terminal: [
-      { type: 'cmd',  text: 'n8n trigger --workflow veille-dgssi' },
-      { type: 'info', text: 'Scraping DGSSI bulletins...' },
-      { type: 'ok',   text: '2 bulletins critiques détectés' },
-      { type: 'warn', text: 'CVE-2026-1337  criticité : ÉLEVÉE' },
-      { type: 'ok',   text: 'Anti-doublon OK · Telegram alert sent' },
-      { type: 'info', text: 'Zéro bruit · uniquement du signal utile' },
+    screenshot: '/dgssi-veille.png',
+    redact: [
+      { top: '0%', left: '0%', width: '100%', height: '8%' },
     ],
-    terminalColor: '#f97316',
   },
   {
     id: 'securevault',
