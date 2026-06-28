@@ -78,6 +78,7 @@ export default function Navbar() {
             <li><a href="#expertise">Expertise</a></li>
             <li><a href="#projects">Réalisations</a></li>
             <li><a href="#blog">Blog</a></li>
+            <li><a href="#suivi" style={{ color: 'var(--sky)' }}>Suivi projet</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
 
@@ -105,6 +106,7 @@ export default function Navbar() {
         <a href="#projects" onClick={closeMenu}>Réalisations</a>
         <a href="#blog" onClick={closeMenu}>Blog</a>
         <a href="#faq" onClick={closeMenu}>FAQ</a>
+        <a href="#suivi" onClick={closeMenu} style={{ color: 'var(--sky)' }}>Suivi projet</a>
         <a href="#contact" onClick={closeMenu} style={{ color: 'var(--sky)', fontWeight: 700 }}>
           Démarrer un projet →
         </a>

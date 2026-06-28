@@ -1,0 +1,23 @@
+[
+  {
+    "code": "SBC-DEMO",
+    "client": "Jean Didier",
+    "project": "Casa di Masha — Boutique Shopify",
+    "startDate": "2026-03-06",
+    "estimatedEnd": "2026-03-09",
+    "currentPhase": 6,
+    "phases": [
+      { "id": 1, "label": "Brief & Analyse",    "desc": "Recueil des besoins, cadrage du projet",         "status": "done",   "date": "2026-03-06" },
+      { "id": 2, "label": "Conception",          "desc": "Architecture, structure produits & navigation",   "status": "done",   "date": "2026-03-07" },
+      { "id": 3, "label": "Développement",       "desc": "Intégration produits, thème, paiement Stripe",   "status": "done",   "date": "2026-03-08" },
+      { "id": 4, "label": "Tests & Recette",     "desc": "Tests navigation, mobile, tunnel d'achat",       "status": "done",   "date": "2026-03-08" },
+      { "id": 5, "label": "Déploiement",         "desc": "Mise en ligne sur domaine casadimasha.com",      "status": "done",   "date": "2026-03-09" },
+      { "id": 6, "label": "Livré ✓",            "desc": "Documentation remise, support actif 30j",        "status": "done",   "date": "2026-03-09" }
+    ],
+    "updates": [
+      { "date": "2026-03-09", "message": "🎉 Boutique en ligne ! Les produits sont visibles et le paiement fonctionne. Support disponible 30 jours." },
+      { "date": "2026-03-08", "message": "Tests finalisés sur mobile et desktop. Mise en ligne demain matin." },
+      { "date": "2026-03-07", "message": "Produits importés, thème configuré. Développement en avance sur le planning." }
+    ]
+  }
+]

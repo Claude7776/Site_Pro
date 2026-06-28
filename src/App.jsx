@@ -12,6 +12,7 @@ import Stack from './components/Stack'
 import Blog from './components/Blog'
 import Process from './components/Process'
 import FAQ from './components/FAQ'
+import ProjectTracker from './components/ProjectTracker'
 import CtaBand from './components/CtaBand'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
@@ -63,6 +64,7 @@ export default function App() {
         <Blog />
         <Process />
         <FAQ />
+        <ProjectTracker />
         <CtaBand />
         <Contact />
       </main>
