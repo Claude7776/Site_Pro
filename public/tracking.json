@@ -9,7 +9,7 @@
     "phases": [
       { "id": 1, "label": "Brief & Analyse",    "desc": "Recueil des besoins, cadrage du projet",         "status": "done",   "date": "2026-03-06" },
       { "id": 2, "label": "Conception",          "desc": "Architecture, structure produits & navigation",   "status": "done",   "date": "2026-03-07" },
-      { "id": 3, "label": "Développement",       "desc": "Intégration produits, thème, paiement Stripe",   "status": "done",   "date": "2026-03-08" },
+      { "id": 3, "label": "Développement",       "desc": "Intégration produits, thème, paiement Stripe",   "status": "active",   "date": "2026-03-08" },
       { "id": 4, "label": "Tests & Recette",     "desc": "Tests navigation, mobile, tunnel d'achat",       "status": "done",   "date": "2026-03-08" },
       { "id": 5, "label": "Déploiement",         "desc": "Mise en ligne sur domaine casadimasha.com",      "status": "done",   "date": "2026-03-09" },
       { "id": 6, "label": "Livré ✓",            "desc": "Documentation remise, support actif 30j",        "status": "done",   "date": "2026-03-09" }
