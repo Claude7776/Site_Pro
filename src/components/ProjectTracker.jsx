@@ -2,6 +2,85 @@ import { useState } from 'react'
 
 const PHASE_ICONS = ['🔍', '🎨', '⚡', '🧪', '🚀', '✅']
 
+// Mini animation per phase (shown when active, static when done)
+const PHASE_VISUALS = [
+  {
+    color: '#38bdf8',
+    lines: [
+      '> Analyse des besoins en cours…',
+      '> Contraintes identifiées',
+      '> Cahier des charges ✓',
+    ],
+  },
+  {
+    color: '#a78bfa',
+    lines: [
+      '> Wireframes en cours…',
+      '> Architecture validée',
+      '> Maquettes approuvées ✓',
+    ],
+  },
+  {
+    color: '#34d399',
+    lines: [
+      'const api = new Router()',
+      'await db.connect({ ssl: true })',
+      'app.listen(8080) // running ✓',
+    ],
+  },
+  {
+    color: '#fbbf24',
+    lines: [
+      '✓ Tests unitaires   47 / 47',
+      '✓ Tests intégration    OK',
+      '✓ Validation client    OK',
+    ],
+  },
+  {
+    color: '#f97316',
+    lines: [
+      '$ docker-compose up -d',
+      '✓ nginx · app · db  started',
+      '✓ SSL · DNS · Live  ↗',
+    ],
+  },
+  {
+    color: '#22c55e',
+    lines: [
+      '✓ Documentation remise',
+      '✓ Formation effectuée',
+      '✓ Support 30j activé',
+    ],
+  },
+]
+
+function PhaseVisual({ index, status }) {
+  const v = PHASE_VISUALS[index]
+  if (!v || status === 'pending') return null
+
+  return (
+    <div className={`phase-visual phase-visual--${status}`} style={{ '--phase-color': v.color }}>
+      <div className="phase-visual-bar">
+        <span className="phase-visual-dot" />
+        <span className="phase-visual-dot" />
+        <span className="phase-visual-dot" />
+      </div>
+      <div className="phase-visual-body">
+        {v.lines.map((line, i) => (
+          <div
+            key={i}
+            className="phase-visual-line"
+            style={status === 'active' ? { animationDelay: `${i * 0.22}s` } : {}}
+          >
+            {line}
+          </div>
+        ))}
+        {status === 'active' && <span className="phase-visual-cursor" />}
+      </div>
+    </div>
+  )
+}
+
 function Progress({ phases }) {
   const done  = phases.filter(p => p.status === 'done').length
   const total = phases.length
@@ -39,6 +118,7 @@ function Timeline({ phases }) {
               )}
             </div>
             <p className="tracker-step-desc">{phase.desc}</p>
+            <PhaseVisual index={i} status={phase.status} />
           </div>
         </div>
       ))}
@@ -64,9 +144,9 @@ function Updates({ updates }) {
 }
 
 export default function ProjectTracker() {
-  const [code, setCode]     = useState('')
-  const [result, setResult] = useState(null)
-  const [error, setError]   = useState('')
+  const [code, setCode]       = useState('')
+  const [result, setResult]   = useState(null)
+  const [error, setError]     = useState('')
   const [loading, setLoading] = useState(false)
 
   const SBC_FORMAT = /^SBC-\d{4}-\d{3}$/i
@@ -161,7 +241,6 @@ export default function ProjectTracker() {
                 )}
               </div>
             </div>
-
             <Progress phases={result.phases} />
             <Timeline phases={result.phases} />
             <Updates updates={result.updates} />

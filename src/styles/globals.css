@@ -1125,9 +1125,72 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:56px
   font-size: .82rem;
   color: var(--text-muted);
   line-height: 1.5;
+  margin-bottom: 8px;
 }
 
 .tracker-step--pending .tracker-step-desc { color: var(--text-dim); }
+
+/* Phase visual mini-terminal */
+.phase-visual {
+  margin-top: 8px;
+  background: #080e1a;
+  border: 1px solid rgba(255,255,255,.07);
+  border-left: 2px solid var(--phase-color, var(--sky));
+  border-radius: 6px;
+  overflow: hidden;
+  font-family: 'JetBrains Mono','Fira Code','Courier New',monospace;
+  font-size: .7rem;
+}
+
+.phase-visual--done {
+  opacity: .55;
+  filter: grayscale(30%);
+}
+
+.phase-visual-bar {
+  display: flex;
+  gap: 4px;
+  padding: 5px 8px;
+  background: rgba(255,255,255,.03);
+  border-bottom: 1px solid rgba(255,255,255,.05);
+}
+
+.phase-visual-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.15);
+  display: block;
+}
+
+.phase-visual-body {
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.phase-visual-line {
+  color: var(--phase-color, var(--sky));
+  opacity: 0;
+  animation: term-line-in .2s ease forwards;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.phase-visual--done .phase-visual-line {
+  opacity: .8;
+  animation: none;
+}
+
+.phase-visual-cursor {
+  display: inline-block;
+  width: 5px; height: 11px;
+  background: var(--phase-color, var(--sky));
+  opacity: .9;
+  vertical-align: middle;
+  animation: blink .9s step-end infinite;
+}
 
 /* Updates */
 .tracker-updates {
