@@ -1162,11 +1162,18 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:56px
   display: block;
 }
 
+.phase-visual-content {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
 .phase-visual-body {
   padding: 8px 10px;
   display: flex;
   flex-direction: column;
   gap: 3px;
+  flex: 1;
 }
 
 .phase-visual-line {
@@ -1190,6 +1197,40 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:56px
   opacity: .9;
   vertical-align: middle;
   animation: blink .9s step-end infinite;
+}
+
+/* Dev coder character */
+.dev-coder {
+  width: 88px;
+  height: auto;
+  flex-shrink: 0;
+  margin-right: 6px;
+}
+
+.dev-coder .dev-screen-cursor {
+  animation: blink .9s step-end infinite;
+}
+
+.dev-coder .dev-arm-left {
+  animation: type-left .38s ease-in-out infinite alternate;
+  transform-box: fill-box;
+  transform-origin: 63px 39px;
+}
+
+.dev-coder .dev-arm-right {
+  animation: type-right .38s ease-in-out infinite alternate;
+  transform-box: fill-box;
+  transform-origin: 76px 39px;
+}
+
+@keyframes type-left {
+  from { transform: translateY(0px);   }
+  to   { transform: translateY(-3px);  }
+}
+
+@keyframes type-right {
+  from { transform: translateY(-3px);  }
+  to   { transform: translateY(0px);   }
 }
 
 /* Updates */

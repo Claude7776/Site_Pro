@@ -54,28 +54,75 @@ const PHASE_VISUALS = [
   },
 ]
 
+function DevCoder() {
+  return (
+    <svg className="dev-coder" viewBox="0 0 88 62" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      {/* desk */}
+      <rect x="6" y="50" width="76" height="3" fill="#1e293b" rx="1.5"/>
+      {/* laptop base */}
+      <rect x="14" y="41" width="42" height="10" fill="#1e293b" rx="2"/>
+      {/* screen outer */}
+      <rect x="14" y="17" width="42" height="26" fill="#1e293b" rx="2"/>
+      {/* screen inner */}
+      <rect x="17" y="20" width="36" height="21" fill="#020810" rx="1"/>
+      {/* code lines */}
+      <rect x="19" y="23"  width="11" height="1.5" fill="#34d399" rx="0.7" opacity="0.9"/>
+      <rect x="19" y="27"  width="20" height="1.5" fill="#38bdf8" rx="0.7" opacity="0.9"/>
+      <rect x="19" y="31"  width="9"  height="1.5" fill="#a78bfa" rx="0.7" opacity="0.9"/>
+      {/* screen cursor */}
+      <rect className="dev-screen-cursor" x="19" y="35" width="4" height="1.5" fill="#34d399" rx="0.5"/>
+      {/* keyboard */}
+      <rect x="15" y="43" width="40" height="5" fill="#0f172a" rx="1"/>
+      {[0,1,2,3,4,5,6,7].map(i => (
+        <rect key={i} x={17 + i * 4.5} y="44.5" width="3" height="2" fill="#1e293b" rx="0.4"/>
+      ))}
+      {/* body */}
+      <rect x="63" y="36" width="13" height="14" fill="#3b82f6" rx="3"/>
+      {/* head */}
+      <circle cx="69.5" cy="28" r="7" fill="#fbbf24"/>
+      {/* hair */}
+      <ellipse cx="69.5" cy="22.5" rx="7" ry="3.5" fill="#1e293b"/>
+      {/* eyes */}
+      <circle cx="67" cy="28.5" r="1" fill="#1e293b"/>
+      <circle cx="72" cy="28.5" r="1" fill="#1e293b"/>
+      {/* left arm — types */}
+      <g className="dev-arm-left">
+        <line x1="63" y1="39" x2="50" y2="45" stroke="#fbbf24" strokeWidth="3" strokeLinecap="round"/>
+      </g>
+      {/* right arm — types offset */}
+      <g className="dev-arm-right">
+        <line x1="76" y1="39" x2="60" y2="45" stroke="#fbbf24" strokeWidth="3" strokeLinecap="round"/>
+      </g>
+    </svg>
+  )
+}
+
 function PhaseVisual({ index, status }) {
   const v = PHASE_VISUALS[index]
   if (!v || status === 'pending') return null
+  const isDev = index === 2
 
   return (
-    <div className={`phase-visual phase-visual--${status}`} style={{ '--phase-color': v.color }}>
+    <div className={`phase-visual phase-visual--${status}${isDev ? ' phase-visual--dev' : ''}`} style={{ '--phase-color': v.color }}>
       <div className="phase-visual-bar">
         <span className="phase-visual-dot" />
         <span className="phase-visual-dot" />
         <span className="phase-visual-dot" />
       </div>
-      <div className="phase-visual-body">
-        {v.lines.map((line, i) => (
-          <div
-            key={i}
-            className="phase-visual-line"
-            style={status === 'active' ? { animationDelay: `${i * 0.22}s` } : {}}
-          >
-            {line}
-          </div>
-        ))}
-        {status === 'active' && <span className="phase-visual-cursor" />}
+      <div className="phase-visual-content">
+        <div className="phase-visual-body">
+          {v.lines.map((line, i) => (
+            <div
+              key={i}
+              className="phase-visual-line"
+              style={status === 'active' ? { animationDelay: `${i * 0.22}s` } : {}}
+            >
+              {line}
+            </div>
+          ))}
+          {status === 'active' && <span className="phase-visual-cursor" />}
+        </div>
+        {isDev && status === 'active' && <DevCoder />}
       </div>
     </div>
   )
