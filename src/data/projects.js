@@ -96,6 +96,23 @@ export const projects = [
     ],
   },
   {
+    id: 'veille-dgssi',
+    icon: '🛰️',
+    title: 'Veille Cybersécurité — Alertes DGSSI Maroc',
+    description: "Pipeline de veille automatisée avec n8n : scraping quotidien des bulletins de sécurité de la DGSSI (Direction Générale de la Sécurité des Systèmes d'Information du Maroc), classification des CVE par criticité, enrichissement des données et notification instantanée en cas de menace haute priorité.",
+    stack: ['n8n', 'DGSSI', 'Webhooks', 'CVE', 'Python', 'RSS', 'Automatisation'],
+    status: 'live',
+    terminal: [
+      { type: 'cmd',  text: 'n8n trigger --workflow veille-dgssi' },
+      { type: 'info', text: 'Fetching DGSSI bulletins...' },
+      { type: 'ok',   text: '4 nouveaux bulletins détectés' },
+      { type: 'warn', text: 'CVE-2026-1337  criticité : ÉLEVÉE' },
+      { type: 'ok',   text: 'Alerte WhatsApp envoyée → Claude' },
+      { type: 'info', text: 'Prochaine vérification : 06:00' },
+    ],
+    terminalColor: '#f97316',
+  },
+  {
     id: 'securevault',
     icon: '🔐',
     title: 'SecureVault — Coffre-fort numérique en C',
