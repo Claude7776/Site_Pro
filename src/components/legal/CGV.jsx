@@ -81,7 +81,7 @@ export default function CGV() {
 
       <h2>12. Droit applicable et juridiction</h2>
       <p>
-        Les présentes CGV sont soumises au droit marocain. Tout litige relatif à leur interprétation ou exécution sera soumis, à défaut de règlement amiable, aux tribunaux compétents de <strong>Rabat, Maroc</strong>.
+        Les présentes CGV sont soumises au droit marocain. Tout litige relatif à leur interprétation ou exécution sera soumis, à défaut de règlement amiable, au Tribunal compétent de <strong>Rabat, Maroc</strong> — Avenue Mohammed V, Rabat (Tél. 05 37 37 99 75).
       </p>
 
       <h2>13. Contact</h2>
