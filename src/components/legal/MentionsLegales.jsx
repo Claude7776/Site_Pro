@@ -39,7 +39,7 @@ export default function MentionsLegales() {
 
       <h2>6. Droit applicable</h2>
       <p>
-        Les présentes mentions légales sont régies par le droit marocain. Tout litige relatif à l'utilisation du site sera soumis à la juridiction compétente de Casablanca, Maroc.
+        Les présentes mentions légales sont régies par le droit marocain. Tout litige relatif à l'utilisation du site sera soumis à la juridiction compétente de Rabat, Maroc.
       </p>
 
       <h2>7. Contact</h2>
