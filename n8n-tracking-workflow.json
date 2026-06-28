@@ -1,0 +1,102 @@
+{
+  "name": "Sky Blue Corp — Suivi Projet Auto",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "skyblue-contact",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-trigger",
+      "name": "Webhook Contact Form",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "https://api.github.com/repos/{{ $vars.GITHUB_REPO }}/contents/public/tracking.json",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Authorization", "value": "Bearer {{ $vars.GITHUB_TOKEN }}" },
+            { "name": "Accept", "value": "application/vnd.github.v3+json" }
+          ]
+        }
+      },
+      "id": "get-tracking",
+      "name": "GET tracking.json",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const body = $('Webhook Contact Form').first().json.body;\nconst ghFile = $('GET tracking.json').first().json;\n\n// Decode current tracking.json content\nconst currentContent = JSON.parse(Buffer.from(ghFile.content, 'base64').toString('utf8'));\n\n// Build new project entry\nconst today = new Date().toISOString().split('T')[0];\nconst newProject = {\n  code: body.projectCode,\n  client: body.name,\n  project: body.project || 'Projet en cours de définition',\n  email: body.email,\n  company: body.company || '',\n  startDate: today,\n  estimatedEnd: null,\n  currentPhase: 1,\n  phases: [\n    { id: 1, label: 'Brief & Analyse',  desc: 'Recueil des besoins, cadrage du projet',       status: 'active', date: today },\n    { id: 2, label: 'Conception',        desc: 'Architecture, maquettes, planning',             status: 'pending', date: null },\n    { id: 3, label: 'Développement',     desc: 'Implémentation, intégrations',                 status: 'pending', date: null },\n    { id: 4, label: 'Tests & Recette',   desc: 'Tests, corrections, validation client',        status: 'pending', date: null },\n    { id: 5, label: 'Déploiement',       desc: 'Mise en ligne, configuration production',      status: 'pending', date: null },\n    { id: 6, label: 'Livré ✓',          desc: 'Documentation remise, support post-livraison', status: 'pending', date: null }\n  ],\n  updates: [\n    { date: today, message: `Bonjour ${body.name.split(' ')[0]} ! Votre demande a bien été reçue. Nous revenons vers vous sous 24h avec une première analyse.` }\n  ]\n};\n\ncurrentContent.push(newProject);\n\n// Encode updated file\nconst updatedContent = Buffer.from(JSON.stringify(currentContent, null, 2)).toString('base64');\n\nreturn [{ json: { updatedContent, sha: ghFile.sha, newProject } }];"
+      },
+      "id": "build-entry",
+      "name": "Build tracking entry",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "method": "PUT",
+        "url": "https://api.github.com/repos/{{ $vars.GITHUB_REPO }}/contents/public/tracking.json",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Authorization", "value": "Bearer {{ $vars.GITHUB_TOKEN }}" },
+            { "name": "Accept", "value": "application/vnd.github.v3+json" }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            { "name": "message", "value": "=feat: add tracking entry {{ $json.newProject.code }}" },
+            { "name": "content", "value": "={{ $json.updatedContent }}" },
+            { "name": "sha",     "value": "={{ $json.sha }}" }
+          ]
+        }
+      },
+      "id": "push-tracking",
+      "name": "Push tracking.json → GitHub",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [900, 300]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={ \"success\": true, \"code\": \"{{ $('Build tracking entry').first().json.newProject.code }}\" }"
+      },
+      "id": "respond",
+      "name": "Respond to form",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1120, 300]
+    }
+  ],
+  "connections": {
+    "Webhook Contact Form": {
+      "main": [[{ "node": "GET tracking.json", "type": "main", "index": 0 }]]
+    },
+    "GET tracking.json": {
+      "main": [[{ "node": "Build tracking entry", "type": "main", "index": 0 }]]
+    },
+    "Build tracking entry": {
+      "main": [[{ "node": "Push tracking.json → GitHub", "type": "main", "index": 0 }]]
+    },
+    "Push tracking.json → GitHub": {
+      "main": [[{ "node": "Respond to form", "type": "main", "index": 0 }]]
+    }
+  },
+  "settings": { "executionOrder": "v1" }
+}

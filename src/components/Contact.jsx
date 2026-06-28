@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { FORMSPREE_ID, WHATSAPP_PHONE } from '../config'
+import { FORMSPREE_ID, WHATSAPP_PHONE, N8N_WEBHOOK_URL } from '../config'
 
 const contactLinks = [
   {
@@ -49,13 +49,30 @@ function buildWaUrl(data, phone, code) {
   return `https://wa.me/${phone.replace(/\D/g, '')}?text=${encodeURIComponent(msg)}`
 }
 
-async function sendEmail(data, code) {
+async function submitToN8n(data, code) {
+  const res = await fetch(N8N_WEBHOOK_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ ...data, projectCode: code }),
+  })
+  if (!res.ok) throw new Error('n8n error')
+}
+
+async function submitToFormspree(data, code) {
   if (!FORMSPREE_ID || FORMSPREE_ID === 'YOUR_FORM_ID') return
   await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
     method: 'POST',
     headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
     body: JSON.stringify({ ...data, projectCode: code }),
   })
+}
+
+async function submitForm(data, code) {
+  if (N8N_WEBHOOK_URL) {
+    await submitToN8n(data, code)
+  } else {
+    await submitToFormspree(data, code)
+  }
 }
 
 function WhatsAppIcon() {
@@ -91,7 +108,7 @@ export default function Contact() {
     const code = generateCode()
 
     try {
-      await sendEmail(data, code)
+      await submitForm(data, code)
       setProjectCode(code)
       setWaUrl(buildWaUrl(data, WHATSAPP_PHONE, code))
       setSubmitted(true)
