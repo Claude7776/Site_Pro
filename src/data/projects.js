@@ -1,12 +1,21 @@
 export const projects = [
   {
-    id: 'projeoo',
+    id: 'CRM',
     icon: '💼',
     title: 'CRM — Plateforme de gestion artisans',
     description: "CRM complet pour entreprises du bâtiment : gestion clients, chantiers, devis PDF, signature électronique intégrée (YouSign), paiement Stripe, facturation automatique, portail client, notifications temps réel via WebSocket et déploiement Docker multi-conteneurs.",
     stack: ['React', 'Node.js', 'PostgreSQL', 'Stripe API', 'YouSign', 'Socket.IO', 'Docker', 'Nginx'],
     status: 'live',
     featured: true,
+    terminal: [
+      { type: 'cmd',  text: 'node server.js --env production' },
+      { type: 'ok',   text: 'PostgreSQL connected  :5432' },
+      { type: 'ok',   text: 'Stripe webhooks registered' },
+      { type: 'ok',   text: 'WebSocket server ready :3001' },
+      { type: 'ok',   text: 'App running on        :8080' },
+      { type: 'info', text: '3 clients · 12 chantiers actifs' },
+    ],
+    terminalColor: '#38bdf8',
   },
   {
     id: 'audit',
@@ -15,6 +24,15 @@ export const projects = [
     description: "Audit de sécurité complet d'un réseau d'entreprise, déploiement pfSense, segmentation VLAN, mise en place IDS/IPS, monitoring Zabbix et rapport de conformité.",
     stack: ['pfSense', 'Zabbix', 'VLAN', 'IDS/IPS', 'VPN'],
     status: 'done',
+    terminal: [
+      { type: 'cmd',  text: 'nmap -sV --script vuln 192.168.1.0/24' },
+      { type: 'warn', text: '3 open ports detected' },
+      { type: 'cmd',  text: 'pfsense-vlan segment --apply' },
+      { type: 'ok',   text: 'VLAN 10 → VLAN 20 isolated' },
+      { type: 'ok',   text: 'IDS/IPS Suricata active' },
+      { type: 'ok',   text: 'Zabbix monitoring: 0 critical alerts' },
+    ],
+    terminalColor: '#f87171',
   },
   {
     id: 'vps',
@@ -23,6 +41,15 @@ export const projects = [
     description: "Migration et déploiement d'une stack applicative complète sur VPS Linux : Docker Compose, Nginx reverse proxy, SSL automatique Let's Encrypt, sauvegardes automatisées et monitoring.",
     stack: ['Ubuntu Server', 'Docker', 'Nginx', "Let's Encrypt", 'Bash Scripts'],
     status: 'live',
+    terminal: [
+      { type: 'cmd', text: 'docker-compose up -d' },
+      { type: 'ok',  text: 'nginx       ✓ started' },
+      { type: 'ok',  text: 'app         ✓ started' },
+      { type: 'ok',  text: 'postgres    ✓ started' },
+      { type: 'cmd', text: 'certbot renew --quiet' },
+      { type: 'ok',  text: 'SSL renewed · expires in 89d · Uptime 99.9%' },
+    ],
+    terminalColor: '#34d399',
   },
   {
     id: 'workflow',
@@ -31,6 +58,15 @@ export const projects = [
     description: "Pipeline d'automatisation complet : génération PDF → envoi email → signature électronique → paiement Stripe → émission facture → notification client. Zéro intervention manuelle.",
     stack: ['Stripe Webhooks', 'YouSign API', 'Mailjet', 'PDFKit', 'Node.js'],
     status: 'done',
+    terminal: [
+      { type: 'cmd',  text: 'node pipeline.js --trigger webhook' },
+      { type: 'ok',   text: 'PDF generated  → devis_2026_042.pdf' },
+      { type: 'ok',   text: 'YouSign        → signature requested' },
+      { type: 'ok',   text: 'Stripe         → €4,200 captured' },
+      { type: 'ok',   text: 'Mailjet        → invoice sent' },
+      { type: 'info', text: 'Pipeline: 0 human actions required' },
+    ],
+    terminalColor: '#a78bfa',
   },
   {
     id: 'masha',
@@ -67,5 +103,14 @@ export const projects = [
     stack: ['C', 'Chiffrement', 'AES', 'Cryptographie', 'Sécurité fichiers'],
     status: 'done',
     github: 'https://github.com/Claude7776/securevault',
+    terminal: [
+      { type: 'cmd',  text: 'gcc -o vault main.c -lssl -lcrypto -O2' },
+      { type: 'ok',   text: 'Build successful · 0 warnings' },
+      { type: 'cmd',  text: './vault encrypt --file secret.txt' },
+      { type: 'ok',   text: 'AES-256-CBC applied' },
+      { type: 'ok',   text: 'Output → secret.txt.enc' },
+      { type: 'info', text: 'Memory: 0 leaks · Valgrind clean' },
+    ],
+    terminalColor: '#fbbf24',
   },
 ]

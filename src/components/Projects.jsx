@@ -15,6 +15,43 @@ function Screenshot({ src, redact = [] }) {
   )
 }
 
+function TerminalBanner({ lines, color = '#38bdf8' }) {
+  return (
+    <div className="terminal-banner" style={{ '--term-color': color }}>
+      <div className="terminal-bar">
+        <span className="terminal-dot" style={{ background: '#f87171' }} />
+        <span className="terminal-dot" style={{ background: '#fbbf24' }} />
+        <span className="terminal-dot" style={{ background: '#34d399' }} />
+        <span className="terminal-title">bash</span>
+      </div>
+      <div className="terminal-body">
+        {lines.map((line, i) => (
+          <div
+            key={i}
+            className={`terminal-line terminal-line--${line.type}`}
+            style={{ animationDelay: `${i * 0.18}s` }}
+          >
+            {line.type === 'cmd'  && <span className="terminal-prompt">$ </span>}
+            {line.type === 'ok'   && <span className="terminal-ok">✓ </span>}
+            {line.type === 'warn' && <span className="terminal-warn">⚠ </span>}
+            {line.type === 'info' && <span className="terminal-info">→ </span>}
+            <span>{line.text}</span>
+          </div>
+        ))}
+        <span className="terminal-cursor" />
+      </div>
+    </div>
+  )
+}
+
+function GitHubIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+      <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+    </svg>
+  )
+}
+
 export default function Projects() {
   return (
     <section id="projects">
@@ -37,16 +74,14 @@ export default function Projects() {
             >
               {p.screenshot ? (
                 <Screenshot src={p.screenshot} redact={p.redact} />
+              ) : p.terminal ? (
+                <TerminalBanner lines={p.terminal} color={p.terminalColor} />
               ) : (
                 <div className="project-header">
                   <div className="project-icon-wrap">{p.icon}</div>
-                  <div style={p.featured ? { marginTop: 'auto' } : undefined}>
-                    <span className={`project-status ${p.status === 'live' ? 'status-live' : 'status-done'}`}>
-                      {p.status === 'live' ? 'En production' : 'Livré'}
-                    </span>
-                  </div>
                 </div>
               )}
+
               <div className="project-body">
                 <div className="project-body-top">
                   <div className="project-icon-wrap" style={{ width: 36, height: 36, fontSize: '1rem' }}>{p.icon}</div>
@@ -69,9 +104,7 @@ export default function Projects() {
                     rel="noopener noreferrer"
                     aria-label={`Voir ${p.title} sur GitHub`}
                   >
-                    <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
-                      <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
-                    </svg>
+                    <GitHubIcon />
                     Voir sur GitHub
                   </a>
                 )}
