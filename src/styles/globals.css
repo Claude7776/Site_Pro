@@ -245,6 +245,8 @@ nav.main-nav .inner { display: flex; align-items: center; justify-content: space
 .project-ext-link:hover { background: rgba(56,189,248,.25); transform: translateY(-1px); }
 .project-ext-link--linkedin { color: #0a66c2; border-color: rgba(10,102,194,.3); background: rgba(10,102,194,.08); }
 .project-ext-link--linkedin:hover { background: rgba(10,102,194,.18); }
+.project-ext-link--site { color: #22c55e; border-color: rgba(34,197,94,.3); background: rgba(34,197,94,.08); }
+.project-ext-link--site:hover { background: rgba(34,197,94,.18); }
 .project-screenshot { position:relative; overflow:hidden; border-bottom:1px solid var(--border); line-height:0; }
 .project-screenshot img { width:100%; height:180px; object-fit:cover; object-position:top; display:block; transition:var(--transition); }
 .project-card:hover .project-screenshot img { transform:scale(1.03); }
