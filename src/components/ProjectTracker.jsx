@@ -69,6 +69,8 @@ export default function ProjectTracker() {
   const [error, setError]   = useState('')
   const [loading, setLoading] = useState(false)
 
+  const SBC_FORMAT = /^SBC-\d{4}-\d{3}$/i
+
   async function handleSearch(searchCode) {
     setLoading(true)
     setError('')
@@ -79,8 +81,10 @@ export default function ProjectTracker() {
       const found = data.find(p => p.code.toLowerCase() === searchCode.trim().toLowerCase())
       if (found) {
         setResult(found)
+      } else if (SBC_FORMAT.test(searchCode.trim())) {
+        setError('pending')
       } else {
-        setError('Code projet introuvable. Vérifiez le code reçu par email.')
+        setError('invalid')
       }
     } catch {
       setError('Impossible de charger les données. Réessayez.')
@@ -100,7 +104,7 @@ export default function ProjectTracker() {
         <span className="tag">ESPACE CLIENT</span>
         <h2 className="section-title">Suivi de votre projet</h2>
         <p className="section-sub">
-          Entrez le code reçu par email pour suivre l'avancement de votre projet en temps réel.
+          Entrez le code obtenu lors de votre demande de contact pour suivre l'avancement de votre projet en temps réel.
         </p>
 
         <div className="tracker-search">
@@ -125,7 +129,21 @@ export default function ProjectTracker() {
           >
             Voir un exemple →
           </button>
-          {error && <p className="tracker-error">{error}</p>}
+          {error === 'pending' && (
+            <div className="tracker-pending">
+              <span className="tracker-pending-icon">🕐</span>
+              <div>
+                <strong>Demande reçue — suivi en cours d'activation</strong>
+                <p>Votre code est valide. Le tableau de bord sera activé sous 24h, dès la confirmation de votre projet.</p>
+              </div>
+            </div>
+          )}
+          {error === 'invalid' && (
+            <p className="tracker-error">Code non reconnu. Vérifiez le code affiché lors de votre demande de contact.</p>
+          )}
+          {error !== 'pending' && error !== 'invalid' && error && (
+            <p className="tracker-error">{error}</p>
+          )}
         </div>
 
         {result && (
