@@ -153,13 +153,6 @@ export const projects = [
     stack: ['Python', 'Pillow', 'PyInstaller', 'Windows', 'Amazon KDP'],
     status: 'live',
     github: 'https://github.com/Claude7776/skyresize',
-    terminal: [
-      { type: 'cmd',  text: 'skyresize.exe --input cover_raw.jpg --preset kdp' },
-      { type: 'info', text: 'Format cible détecté : 2560x1600px · 300 DPI' },
-      { type: 'ok',   text: 'Redimensionnement appliqué · ratio préservé' },
-      { type: 'ok',   text: 'Export → cover_kdp_ready.jpg' },
-      { type: 'ok',   text: 'Validation Amazon KDP : conforme' },
-    ],
-    terminalColor: '#fb923c',
+    screenshot: '/skyresize.png',
   },
 ]
