@@ -1,4 +1,5 @@
 import { projects } from '../data/projects'
+import { DataIcon } from './icons'
 
 function Screenshot({ src, redact = [] }) {
   return (
@@ -96,13 +97,13 @@ export default function Projects() {
                 <TerminalBanner lines={p.terminal} color={p.terminalColor} />
               ) : (
                 <div className="project-header">
-                  <div className="project-icon-wrap">{p.icon}</div>
+                  <div className="project-icon-wrap"><DataIcon name={p.icon} /></div>
                 </div>
               )}
 
               <div className="project-body">
                 <div className="project-body-top">
-                  <div className="project-icon-wrap" style={{ width: 36, height: 36, fontSize: '1rem' }}>{p.icon}</div>
+                  <div className="project-icon-wrap" style={{ width: 36, height: 36, fontSize: '1rem' }}><DataIcon name={p.icon} /></div>
                   <span className={`project-status ${p.status === 'live' ? 'status-live' : 'status-done'}`}>
                     {p.status === 'live' ? 'En production' : 'Livré'}
                   </span>

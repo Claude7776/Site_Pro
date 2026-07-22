@@ -1,7 +1,7 @@
 export const projects = [
   {
     id: 'CRM',
-    icon: '💼',
+    icon: 'briefcase',
     title: 'CRM — Plateforme de gestion artisans',
     description: "CRM complet pour entreprises du bâtiment : gestion clients, chantiers, devis PDF, signature électronique intégrée (YouSign), paiement Stripe, facturation automatique, portail client, notifications temps réel via WebSocket et déploiement Docker multi-conteneurs.",
     stack: ['React', 'Node.js', 'PostgreSQL', 'Stripe API', 'YouSign', 'Socket.IO', 'Docker', 'Nginx'],
@@ -19,7 +19,7 @@ export const projects = [
   },
   {
     id: 'audit',
-    icon: '🛡️',
+    icon: 'shield',
     title: 'Audit & Hardening Infrastructure PME',
     description: "Audit de sécurité complet d'un réseau d'entreprise, déploiement pfSense, segmentation VLAN, mise en place IDS/IPS, monitoring Zabbix et rapport de conformité.",
     stack: ['pfSense', 'Zabbix', 'VLAN', 'IDS/IPS', 'VPN'],
@@ -36,7 +36,7 @@ export const projects = [
   },
   {
     id: 'vps',
-    icon: '☁️',
+    icon: 'cloud',
     title: 'Déploiement Infrastructure Cloud VPS',
     description: "Migration et déploiement d'une stack applicative complète sur VPS Linux : Docker Compose, Nginx reverse proxy, SSL automatique Let's Encrypt, sauvegardes automatisées et monitoring.",
     stack: ['Ubuntu Server', 'Docker', 'Nginx', "Let's Encrypt", 'Bash Scripts'],
@@ -53,7 +53,7 @@ export const projects = [
   },
   {
     id: 'workflow',
-    icon: '⚡',
+    icon: 'bolt',
     title: 'Automatisation workflow devis → paiement',
     description: "Pipeline d'automatisation complet : génération PDF → envoi email → signature électronique → paiement Stripe → émission facture → notification client. Zéro intervention manuelle.",
     stack: ['Stripe Webhooks', 'YouSign API', 'Mailjet', 'PDFKit', 'Node.js'],
@@ -70,7 +70,7 @@ export const projects = [
   },
   {
     id: 'masha',
-    icon: '👗',
+    icon: 'dress',
     title: 'Casa di Masha — Boutique Mode Italienne',
     description: "Création complète d'une boutique Shopify pour une enseigne de prêt-à-porter italien : configuration du thème, catalogue produits, intégration paiement, mise en place Google Analytics 4, Google Search Console et optimisation SEO on-page.",
     stack: ['Shopify', 'Google Analytics 4', 'Search Console', 'SEO', 'GTM'],
@@ -84,7 +84,7 @@ export const projects = [
   },
   {
     id: 'soc',
-    icon: '👽',
+    icon: 'radar',
     title: 'Le Gardien des Systèmes — SOC Dashboard Splunk',
     description: "Dashboard Splunk avancé de supervision SOC : score de sécurité global (0-100), détection brute-force avec alerte clignotante, surveillance Active Directory, intégration Sysmon (création de process, connexions réseau, injection de code) et heatmap d'activité annuelle. Quality Gate SonarQube PASSED — 0 issue sécurité.",
     stack: ['Splunk', 'Sysmon', 'Windows Security', 'Active Directory', 'SOC', 'SIEM'],
@@ -98,7 +98,7 @@ export const projects = [
   },
   {
     id: 'veille-dgssi',
-    icon: '🛰️',
+    icon: 'satellite',
     title: 'Veille Cybersécurité — Alertes DGSSI Maroc',
     description: "Workflow n8n de veille cyber automatisée sur les bulletins de la DGSSI : scraping quotidien, extraction des informations clés, filtrage intelligent des vulnérabilités critiques, mécanisme anti-doublon et alerte temps réel sur Telegram. Zéro bruit, uniquement du signal utile — directement applicable en SOC, NOC, MSSP ou consulting cybersécurité.",
     stack: ['n8n', 'DGSSI', 'Telegram', 'Web Scraping', 'SOC', 'Veille Cyber', 'Automatisation'],
@@ -111,7 +111,7 @@ export const projects = [
   },
   {
     id: 'hikvision-audit',
-    icon: '📷',
+    icon: 'camera',
     title: 'Audit Sécurité Caméras IP Hikvision — Automatisation réseau',
     description: "Mini-audit de sécurité réseau suite aux CVE publiées sur les séries Hikvision DS-2CD2046G2/2066G2/2086G2 : outil interne d'audit automatisé pour détecter les caméras IP, analyser les services exposés (RTSP, HTTP, SDK), identifier les endpoints de streaming et scanner les vulnérabilités connues. Cartographie rapide de la surface d'attaque d'un parc CCTV en entreprise.",
     stack: ['nmap', 'Python', 'RTSP', 'CVE', 'Hikvision', 'CCTV', 'Network Security', 'IoT Security'],
@@ -129,7 +129,7 @@ export const projects = [
   },
   {
     id: 'securevault',
-    icon: '🔐',
+    icon: 'lock',
     title: 'SecureVault — Coffre-fort numérique en C',
     description: "Coffre-fort numérique développé en C, conçu pour chiffrer et déchiffrer des fichiers de manière sécurisée. Implémentation bas-niveau des algorithmes de chiffrement avec gestion rigoureuse de la mémoire.",
     stack: ['C', 'Chiffrement', 'AES', 'Cryptographie', 'Sécurité fichiers'],
@@ -147,7 +147,7 @@ export const projects = [
   },
   {
     id: 'skyresize',
-    icon: '🖼️',
+    icon: 'picture',
     title: 'SkyResize — Redimensionnement d\'images pour Amazon KDP',
     description: "Logiciel Windows développé pour un éditeur italien indépendant après plusieurs rejets de couverture lors de la publication de livres sur Kindle Direct Publishing : les fichiers étaient systématiquement refusés par Amazon pour non-conformité de dimensions/DPI. SkyResize redimensionne automatiquement les pixels au format exact exigé par KDP, en conservant le ratio et la qualité, avec traitement par lot pour les publications multiples.",
     stack: ['Python', 'Pillow', 'PyInstaller', 'Windows', 'Amazon KDP'],

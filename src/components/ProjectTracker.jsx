@@ -1,6 +1,7 @@
 import { useState } from 'react'
+import { SearchIcon, PaletteIcon, BoltIcon, FlaskIcon, RocketIcon, CheckCircleIcon, ClockIcon } from './icons'
 
-const PHASE_ICONS = ['🔍', '🎨', '⚡', '🧪', '🚀', '✅']
+const PHASE_ICONS = [SearchIcon, PaletteIcon, BoltIcon, FlaskIcon, RocketIcon, CheckCircleIcon]
 
 // Mini animation per phase (shown when active, static when done)
 const PHASE_VISUALS = [
@@ -149,7 +150,11 @@ function Timeline({ phases }) {
         <div key={phase.id} className={`tracker-step tracker-step--${phase.status}`}>
           <div className="tracker-step-left">
             <div className="tracker-step-icon">
-              {phase.status === 'done' ? '✓' : phase.status === 'active' ? PHASE_ICONS[i] : '○'}
+              {phase.status === 'done'
+                ? '✓'
+                : phase.status === 'active'
+                ? (() => { const PhaseIcon = PHASE_ICONS[i]; return <PhaseIcon /> })()
+                : '○'}
             </div>
             {i < phases.length - 1 && (
               <div className={`tracker-step-line ${phase.status === 'done' ? 'tracker-step-line--done' : ''}`} />
@@ -258,7 +263,7 @@ export default function ProjectTracker() {
           </button>
           {error === 'pending' && (
             <div className="tracker-pending">
-              <span className="tracker-pending-icon">🕐</span>
+              <span className="tracker-pending-icon"><ClockIcon /></span>
               <div>
                 <strong>Demande reçue — suivi en cours d'activation</strong>
                 <p>Votre code est valide. Le tableau de bord sera activé sous 24h, dès la confirmation de votre projet.</p>

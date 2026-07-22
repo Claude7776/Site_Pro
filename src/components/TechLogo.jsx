@@ -133,7 +133,7 @@ const BADGES = {
   'pfSense':           { bg: '#002B49', fg: '#38bdf8', abbr: 'pf' },
   'DNS':               { bg: '#1565C0', fg: '#fff', abbr: 'DNS' },
   'DHCP':              { bg: '#1A73E8', fg: '#fff', abbr: 'DH' },
-  'Firewall':          { bg: '#E74C3C', fg: '#fff', abbr: '🔥' },
+  'Firewall':          { bg: '#E74C3C', fg: '#fff', abbr: 'FW' },
   'Reverse Proxy':     { bg: '#2ECC71', fg: '#fff', abbr: 'RP' },
   'IP Scanner':        { bg: '#2C3E50', fg: '#38bdf8', abbr: 'IP' },
   'Glances':           { bg: '#00A86B', fg: '#fff', abbr: 'GL' },

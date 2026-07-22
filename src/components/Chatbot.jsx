@@ -1,5 +1,40 @@
 import { useState, useRef, useEffect } from 'react'
 import { getResponse } from '../data/chatResponses'
+import {
+  RobotIcon, ChatBubbleIcon, WaveIcon, ShieldIcon, BriefcaseIcon, CloudIcon, BoltIcon,
+  PlugIcon, GlobeIcon, MonitorIcon, GearIcon, DatabaseIcon, LockIcon, SignatureIcon,
+  MailIcon, SmsIcon, TargetIcon, SmileIcon, PhoneIcon,
+} from './icons'
+
+const EMOJI_ICON_MAP = {
+  '👋': WaveIcon,
+  '🛡️': ShieldIcon,
+  '💼': BriefcaseIcon,
+  '☁️': CloudIcon,
+  '⚡': BoltIcon,
+  '🔌': PlugIcon,
+  '🌐': GlobeIcon,
+  '🖥️': MonitorIcon,
+  '⚙️': GearIcon,
+  '🗄️': DatabaseIcon,
+  '🔐': LockIcon,
+  '✍️': SignatureIcon,
+  '📧': MailIcon,
+  '✉️': MailIcon,
+  '📱': SmsIcon,
+  '📞': PhoneIcon,
+  '🎯': TargetIcon,
+  '😊': SmileIcon,
+}
+const EMOJI_KEYS = Object.keys(EMOJI_ICON_MAP).sort((a, b) => b.length - a.length)
+const EMOJI_REGEX = new RegExp(`(${EMOJI_KEYS.map((e) => e.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')})`, 'gu')
+
+function renderInline(str) {
+  return str.split(EMOJI_REGEX).filter(Boolean).map((part, i) => {
+    const IconCmp = EMOJI_ICON_MAP[part]
+    return IconCmp ? <IconCmp key={i} className="chat-inline-icon" /> : part
+  })
+}
 
 const WELCOME = {
   id: 0,
@@ -61,10 +96,11 @@ export default function Chatbot() {
   }
 
   function renderText(text) {
-    return text.split('\n').map((line, i) => (
+    const lines = text.split('\n')
+    return lines.map((line, i) => (
       <span key={i}>
-        {line}
-        {i < text.split('\n').length - 1 && <br />}
+        {renderInline(line)}
+        {i < lines.length - 1 && <br />}
       </span>
     ))
   }
@@ -73,7 +109,7 @@ export default function Chatbot() {
     <>
       <div className={`chatbot-window${open ? ' open' : ''}`} role="dialog" aria-label="Assistant Sky Blue">
         <div className="chatbot-header">
-          <div className="chatbot-avatar">🤖</div>
+          <div className="chatbot-avatar"><RobotIcon /></div>
           <div className="chatbot-header-info">
             <strong>Assistant Sky Blue</strong>
             <span>En ligne · répond en quelques secondes</span>
@@ -141,7 +177,7 @@ export default function Chatbot() {
         onClick={() => setOpen((v) => !v)}
         aria-label={open ? 'Fermer le chat' : 'Ouvrir le chat'}
       >
-        {open ? '✕' : '💬'}
+        {open ? '✕' : <ChatBubbleIcon />}
         {showBadge && !open && <span className="chat-badge">1</span>}
       </button>
     </>

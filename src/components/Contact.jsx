@@ -1,22 +1,23 @@
 import { useState } from 'react'
 import { FORMSPREE_ID, WHATSAPP_PHONE, N8N_WEBHOOK_URL } from '../config'
+import { MailIcon, BriefcaseIcon, PhoneIcon, SmsIcon } from './icons'
 
 const contactLinks = [
   {
     href: 'mailto:codecld@proton.me',
-    icon: '✉️',
+    icon: MailIcon,
     label: 'Email professionnelle',
     value: 'codecld@proton.me',
   },
   {
     href: 'https://linkedin.com/company/skyblue-corporation',
-    icon: '💼',
+    icon: BriefcaseIcon,
     label: 'LinkedIn',
     value: 'Sky Blue Corporation',
   },
   {
     href: 'tel:+212690565512',
-    icon: '📞',
+    icon: PhoneIcon,
     label: 'Appel de découverte',
     value: 'Réserver un créneau 30 min gratuit',
   },
@@ -40,12 +41,12 @@ function generateCode() {
 
 function buildWaUrl(data, phone, code) {
   const msg =
-    `📋 Nouvelle demande — Sky Blue Corp\n` +
-    `🔖 Référence projet : ${code}\n` +
-    `👤 ${data.name}${data.company ? ` (${data.company})` : ''}\n` +
-    `✉️ ${data.email}\n` +
-    `📁 ${data.project || 'Non précisé'}\n` +
-    `💬 ${data.message}`
+    `Nouvelle demande — Sky Blue Corp\n` +
+    `Référence projet : ${code}\n` +
+    `Nom : ${data.name}${data.company ? ` (${data.company})` : ''}\n` +
+    `Email : ${data.email}\n` +
+    `Projet : ${data.project || 'Non précisé'}\n` +
+    `Message : ${data.message}`
   return `https://wa.me/${phone.replace(/\D/g, '')}?text=${encodeURIComponent(msg)}`
 }
 
@@ -150,7 +151,7 @@ export default function Contact() {
             <div className="contact-links">
               {contactLinks.map((l) => (
                 <a href={l.href} className="contact-link" key={l.label}>
-                  <div className="cl-icon">{l.icon}</div>
+                  <div className="cl-icon"><l.icon /></div>
                   <div className="cl-text">
                     <strong>{l.label}</strong>
                     <span>{l.value}</span>
@@ -249,7 +250,7 @@ export default function Contact() {
                 )}
 
                 <p className="form-note">
-                  📧 Email automatique + 📱 WhatsApp en 1 clic · Réponse sous 24h
+                  <MailIcon style={{ verticalAlign: -2, marginRight: 2 }} /> Email automatique + <SmsIcon style={{ verticalAlign: -2, marginRight: 2 }} /> WhatsApp en 1 clic · Réponse sous 24h
                 </p>
               </form>
             )}

@@ -702,6 +702,8 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:56px
 }
 .chat-msg.bot .chat-bubble { background: var(--surface); border: 1px solid var(--border); border-radius: 4px 14px 14px 14px; color: var(--text); }
 .chat-msg.user .chat-bubble { background: linear-gradient(135deg,var(--sky),var(--blue)); color: #020810; font-weight: 500; border-radius: 14px 4px 14px 14px; }
+.chat-inline-icon { color: var(--sky); vertical-align: -2px; margin: 0 1px; }
+.chat-msg.user .chat-inline-icon { color: inherit; }
 .typing-indicator { display: flex; align-items: center; gap: 4px; padding: 10px 14px; background: var(--surface); border: 1px solid var(--border); border-radius: 4px 14px 14px 14px; }
 .typing-indicator span { width: 6px; height: 6px; border-radius: 50%; background: var(--sky); animation: typing 1.4s infinite ease-in-out; }
 .typing-indicator span:nth-child(2) { animation-delay: .2s; }

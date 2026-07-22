@@ -5,7 +5,7 @@ export const articles = [
     title: 'Le Gardien des Systèmes — Dashboard Splunk SOC avec Sysmon',
     date: '2026-01-01',
     excerpt:
-      "Score de sécurité global, détection brute-force, surveillance Active Directory et intégration Sysmon avancée (EventIDs 1, 3, 10, 11) — tout en dark theme dans un seul dashboard Splunk. Quality Gate SonarQube : PASSED ✅",
+      "Score de sécurité global, détection brute-force, surveillance Active Directory et intégration Sysmon avancée (EventIDs 1, 3, 10, 11) — tout en dark theme dans un seul dashboard Splunk. Quality Gate SonarQube : PASSED",
     link: 'https://github.com/Claude7776/SOC-Command-Center',
     tags: ['Splunk', 'Sysmon', 'SOC', 'Windows Security'],
   },

@@ -1,4 +1,5 @@
 import { services } from '../data/services'
+import { DataIcon } from './icons'
 
 export default function Services() {
   return (
@@ -19,7 +20,7 @@ export default function Services() {
           {services.map((s) => (
             <div key={s.id} className={`service-card${s.featured ? ' featured' : ''}`}>
               {s.featured && <div className="feature-badge">Core</div>}
-              <div className="service-icon">{s.icon}</div>
+              <div className="service-icon"><DataIcon name={s.icon} /></div>
               <h3>{s.title}</h3>
               <p>{s.description}</p>
               <div className="service-tags">

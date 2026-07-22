@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { TargetIcon, WrenchIcon, LockIcon } from './icons'
 
 const skills = [
   { label: 'Développement SaaS', pct: 95 },
@@ -10,17 +11,17 @@ const skills = [
 
 const values = [
   {
-    icon: '🎯',
+    icon: TargetIcon,
     title: 'Orienté résultats',
     desc: 'Chaque projet est cadré par des objectifs mesurables et livrés dans les délais convenus.',
   },
   {
-    icon: '🔧',
+    icon: WrenchIcon,
     title: 'Full-stack, vraiment',
     desc: "Du frontend React au serveur Linux en passant par les APIs — pas de sous-traitance, pas de zone d'ombre.",
   },
   {
-    icon: '🔒',
+    icon: LockIcon,
     title: 'Security by design',
     desc: "La sécurité n'est pas une option. Chaque solution est pensée avec le niveau d'exigence d'une infrastructure critique.",
   },
@@ -144,7 +145,7 @@ export default function About() {
             <div className="value-list">
               {values.map((v) => (
                 <div className="value-item" key={v.title}>
-                  <span className="value-icon">{v.icon}</span>
+                  <span className="value-icon"><v.icon /></span>
                   <div>
                     <strong>{v.title}</strong>
                     <span>{v.desc}</span>

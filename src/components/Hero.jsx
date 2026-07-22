@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { ShieldIcon, BoltIcon } from './icons'
 
 function CountUp({ target, suffix = '', duration = 1600 }) {
   const [val, setVal] = useState(0)
@@ -125,7 +126,7 @@ export default function Hero() {
                 <span className="t-cmd">./audit-security.sh --full</span>
               </div>
               <div className="terminal-line">
-                <span className="t-out">⚡ Firewall rules applied</span>
+                <span className="t-out"><BoltIcon style={{ verticalAlign: -2, marginRight: 3 }} /> Firewall rules applied</span>
                 <span className="t-warn">3 alerts resolved</span>
               </div>
               <div className="terminal-line" style={{ border: 'none' }}>
@@ -133,11 +134,11 @@ export default function Hero() {
               </div>
             </div>
             <div className="floating-badge fb-top">
-              <span>🛡️</span>
+              <span style={{ color: 'var(--sky)' }}><ShieldIcon /></span>
               <span style={{ color: 'var(--sky)' }}>Système sécurisé</span>
             </div>
             <div className="floating-badge fb-bottom">
-              <span>⚡</span>
+              <span style={{ color: '#a3e635' }}><BoltIcon /></span>
               <span style={{ color: '#a3e635' }}>Déployé en production</span>
             </div>
           </div>

@@ -1,7 +1,7 @@
 export const expertiseDomains = [
   {
     id: 'sysadmin',
-    icon: '🖥️',
+    icon: 'monitor',
     title: 'Administration Systèmes & Serveurs',
     items: [
       'Déploiement et administration de serveurs Linux Ubuntu',
@@ -13,7 +13,7 @@ export const expertiseDomains = [
   },
   {
     id: 'network',
-    icon: '🌐',
+    icon: 'globe',
     title: 'Réseaux & Infrastructure',
     items: [
       'Configuration de réseaux d\'entreprise (DNS, DHCP, Pare-feu)',
@@ -25,7 +25,7 @@ export const expertiseDomains = [
   },
   {
     id: 'security',
-    icon: '🔐',
+    icon: 'lock',
     title: 'Cybersécurité',
     items: [
       'Sécurisation d\'infrastructures réseau et serveurs',
@@ -37,7 +37,7 @@ export const expertiseDomains = [
   },
   {
     id: 'devops',
-    icon: '⚙️',
+    icon: 'gear',
     title: 'DevOps & Cloud',
     items: [
       'Déploiement d\'applications sur VPS (Linux, Nginx)',
@@ -49,7 +49,7 @@ export const expertiseDomains = [
   },
   {
     id: 'automation',
-    icon: '🔄',
+    icon: 'sync',
     title: 'Automatisation',
     items: [
       'Création de workflows automatisés avec n8n',
@@ -60,7 +60,7 @@ export const expertiseDomains = [
   },
   {
     id: 'dev',
-    icon: '💻',
+    icon: 'laptop',
     title: 'Développement Web & Applications',
     items: [
       'CRM complets : auth, messagerie temps réel, dashboard',
@@ -71,7 +71,7 @@ export const expertiseDomains = [
   },
   {
     id: 'callcenter',
-    icon: '📞',
+    icon: 'phone',
     title: 'Infrastructure Call Center',
     items: [
       'Déploiement de laboratoire Vicibox',
@@ -83,7 +83,7 @@ export const expertiseDomains = [
   },
   {
     id: 'support',
-    icon: '🛠️',
+    icon: 'wrench',
     title: 'Support & Maintenance IT',
     items: [
       'Assistance à distance et sur site (Windows & Linux)',
@@ -95,7 +95,7 @@ export const expertiseDomains = [
   },
   {
     id: 'architecture',
-    icon: '🧠',
+    icon: 'brain',
     title: 'Architecture Logicielle',
     items: [
       'Conception d\'architectures documentées (Frontend / Backend / Infra / Sécu)',
@@ -106,7 +106,7 @@ export const expertiseDomains = [
   },
   {
     id: 'iam',
-    icon: '🏢',
+    icon: 'building',
     title: 'Gestion des Identités & IAM',
     items: [
       'Administration Active Directory et LDAP',
@@ -119,9 +119,9 @@ export const expertiseDomains = [
 ]
 
 export const visionItems = [
-  { icon: '🔐', label: 'Sécurisés' },
-  { icon: '⚙️', label: 'Automatisés' },
-  { icon: '☁️', label: 'Cloud-ready' },
-  { icon: '📈', label: 'Évolutifs' },
-  { icon: '🛰️', label: 'Pensés pour durer' },
+  { icon: 'lock', label: 'Sécurisés' },
+  { icon: 'gear', label: 'Automatisés' },
+  { icon: 'cloud', label: 'Cloud-ready' },
+  { icon: 'chartUp', label: 'Évolutifs' },
+  { icon: 'satellite', label: 'Pensés pour durer' },
 ]

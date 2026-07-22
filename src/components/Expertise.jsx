@@ -1,4 +1,5 @@
 import { expertiseDomains, visionItems } from '../data/expertise'
+import { DataIcon } from './icons'
 
 export default function Expertise() {
   return (
@@ -20,7 +21,7 @@ export default function Expertise() {
           {expertiseDomains.map((domain) => (
             <div className="expertise-card" key={domain.id}>
               <div className="expertise-card-header">
-                <span className="expertise-icon">{domain.icon}</span>
+                <span className="expertise-icon"><DataIcon name={domain.icon} /></span>
                 <h3>{domain.title}</h3>
               </div>
               <ul className="expertise-items">
@@ -45,7 +46,7 @@ export default function Expertise() {
           <div className="vision-items">
             {visionItems.map((v) => (
               <div className="vision-item" key={v.label}>
-                <span className="vision-icon">{v.icon}</span>
+                <span className="vision-icon"><DataIcon name={v.icon} /></span>
                 <span>{v.label}</span>
               </div>
             ))}
