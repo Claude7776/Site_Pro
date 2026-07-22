@@ -167,7 +167,10 @@ nav.main-nav .inner { display: flex; align-items: center; justify-content: space
 
 /* ── CLIENTS / TECH BAR ───────────────────────────────────── */
 #clients { padding:48px 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); background:var(--bg2); }
-.clients-label { text-align:center; font-size:.78rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--text-dim); margin-bottom:28px; }
+.clients-label { display:flex; align-items:center; justify-content:center; gap:10px; text-align:center; font-size:.78rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--text-dim); margin-bottom:28px; }
+.lightsaber-icon { width:34px; height:13px; overflow:visible; }
+.lightsaber-blade { filter: drop-shadow(0 0 3px #38bdf8) drop-shadow(0 0 7px rgba(56,189,248,.8)); animation: saber-flicker 2.4s ease-in-out infinite; }
+@keyframes saber-flicker { 0%,100%{opacity:1} 48%{opacity:1} 50%{opacity:.85} 52%{opacity:1} }
 .tech-scroll-wrap { overflow:hidden; position:relative; }
 .tech-scroll-wrap::before,.tech-scroll-wrap::after { content:''; position:absolute; top:0; bottom:0; width:120px; z-index:2; pointer-events:none; }
 .tech-scroll-wrap::before { left:0; background:linear-gradient(to right,var(--bg2),transparent); }

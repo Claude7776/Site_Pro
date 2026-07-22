@@ -15,6 +15,19 @@ function Icon({ children }) {
   )
 }
 
+function LightsaberIcon() {
+  return (
+    <svg className="lightsaber-icon" viewBox="0 0 32 12" aria-hidden="true">
+      <rect x="26" y="4.5" width="1.4" height="3" rx="0.5" fill="#94a3b8" />
+      <rect x="20" y="3.5" width="7" height="5" rx="1.6" fill="#3f4757" />
+      <rect x="21" y="2.3" width="1.1" height="7.4" fill="#1f2733" />
+      <rect x="23.2" y="2.3" width="1.1" height="7.4" fill="#1f2733" />
+      <circle cx="19.6" cy="6" r="1.3" fill="#7dd3fc" />
+      <rect x="0" y="5" width="19.8" height="2" rx="1" fill="#7dd3fc" className="lightsaber-blade" />
+    </svg>
+  )
+}
+
 const techs = [
   {
     label: 'Linux',
@@ -274,7 +287,10 @@ export default function TechBar() {
   return (
     <section id="clients">
       <div className="container">
-        <p className="clients-label">Nous maîtrisons l'écosystème complet</p>
+        <p className="clients-label">
+          Nous maîtrisons l'écosystème complet
+          <LightsaberIcon />
+        </p>
         <div className="tech-scroll-wrap">
           <div className="tech-row">
             {items.map((t, i) => (
