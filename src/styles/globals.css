@@ -1291,40 +1291,6 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:56px
   animation: blink .9s step-end infinite;
 }
 
-/* Dev coder character */
-.dev-coder {
-  width: 88px;
-  height: auto;
-  flex-shrink: 0;
-  margin-right: 6px;
-}
-
-.dev-coder .dev-screen-cursor {
-  animation: blink .9s step-end infinite;
-}
-
-.dev-coder .dev-arm-left {
-  animation: type-left .38s ease-in-out infinite alternate;
-  transform-box: fill-box;
-  transform-origin: 63px 39px;
-}
-
-.dev-coder .dev-arm-right {
-  animation: type-right .38s ease-in-out infinite alternate;
-  transform-box: fill-box;
-  transform-origin: 76px 39px;
-}
-
-@keyframes type-left {
-  from { transform: translateY(0px);   }
-  to   { transform: translateY(-3px);  }
-}
-
-@keyframes type-right {
-  from { transform: translateY(-3px);  }
-  to   { transform: translateY(0px);   }
-}
-
 /* Updates */
 .tracker-updates {
   border-top: 1px solid var(--border);
