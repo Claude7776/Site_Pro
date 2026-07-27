@@ -24,11 +24,27 @@ import BackToTop from './components/BackToTop'
 import Chatbot from './components/Chatbot'
 import MatrixBackground from './components/MatrixBackground'
 
+function readLoaded() {
+  try {
+    return !!sessionStorage.getItem('loaded')
+  } catch {
+    return false
+  }
+}
+
+function writeLoaded() {
+  try {
+    sessionStorage.setItem('loaded', '1')
+  } catch {
+    // storage blocked (private mode, in-app browser) — just skip persistence
+  }
+}
+
 export default function App() {
-  const [loading, setLoading] = useState(() => !sessionStorage.getItem('loaded'))
+  const [loading, setLoading] = useState(() => !readLoaded())
 
   function handleLoaderDone() {
-    sessionStorage.setItem('loaded', '1')
+    writeLoaded()
     setLoading(false)
   }
 

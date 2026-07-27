@@ -31,7 +31,12 @@ export default function Navbar() {
   const [dark, setDark] = useState(true)
 
   useEffect(() => {
-    const saved = localStorage.getItem('theme')
+    let saved = null
+    try {
+      saved = localStorage.getItem('theme')
+    } catch {
+      // storage blocked (private mode, in-app browser) — default to dark
+    }
     const isDark = saved ? saved === 'dark' : true
     setDark(isDark)
     document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light')
@@ -48,7 +53,11 @@ export default function Navbar() {
     setDark(next)
     const t = next ? 'dark' : 'light'
     document.documentElement.setAttribute('data-theme', t)
-    localStorage.setItem('theme', t)
+    try {
+      localStorage.setItem('theme', t)
+    } catch {
+      // storage blocked (private mode, in-app browser) — theme just won't persist
+    }
   }
 
   const closeMenu = () => setMenuOpen(false)
