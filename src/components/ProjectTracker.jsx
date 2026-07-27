@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { SearchIcon, PaletteIcon, BoltIcon, FlaskIcon, RocketIcon, CheckCircleIcon, ClockIcon } from './icons'
 
 const PHASE_ICONS = [SearchIcon, PaletteIcon, BoltIcon, FlaskIcon, RocketIcon, CheckCircleIcon]
@@ -8,17 +8,17 @@ const PHASE_VISUALS = [
   {
     color: '#38bdf8',
     lines: [
-      '> Analyse des besoins en cours…',
-      '> Contraintes identifiées',
-      '> Cahier des charges ✓',
+      'const brief = await client.intake()',
+      'requirements.push(...brief.scope)',
+      "spec.status = 'validated' // ✓",
     ],
   },
   {
     color: '#a78bfa',
     lines: [
-      '> Wireframes en cours…',
-      '> Architecture validée',
-      '> Maquettes approuvées ✓',
+      'const wireframe = figma.export()',
+      'theme.tokens = skyPalette',
+      'ui.approve(wireframe) // ✓',
     ],
   },
   {
@@ -26,31 +26,31 @@ const PHASE_VISUALS = [
     lines: [
       'const api = new Router()',
       'await db.connect({ ssl: true })',
-      'app.listen(8080) // running ✓',
+      "app.listen(8080) // ✓ running",
     ],
   },
   {
     color: '#fbbf24',
     lines: [
-      '✓ Tests unitaires   47 / 47',
-      '✓ Tests intégration    OK',
-      '✓ Validation client    OK',
+      "describe('crm.api', () => {",
+      '  expect(suite.failures).toBe(0)',
+      "}) // ✓ 47/47",
     ],
   },
   {
     color: '#f97316',
     lines: [
-      '$ docker-compose up -d',
-      '✓ nginx · app · db  started',
-      '✓ SSL · DNS · Live  ↗',
+      'await docker.compose.up({ detach: true })',
+      'await ssl.renew()',
+      "deploy.status = 'live' // ✓",
     ],
   },
   {
     color: '#22c55e',
     lines: [
-      '✓ Documentation remise',
-      '✓ Formation effectuée',
-      '✓ Support 30j activé',
+      'await docs.publish()',
+      'await support.activate({ days: 30 })',
+      "project.status = 'delivered' // ✓",
     ],
   },
 ]
@@ -59,17 +59,32 @@ function typingDuration(len) {
   return Math.min(1.4, 0.45 + len * 0.03)
 }
 
-function PhaseVisual({ index, status }) {
-  const v = PHASE_VISUALS[index]
-  if (!v || status === 'pending') return null
-
+function getTimings(lines) {
   let cursorDelay = 0
-  const timings = v.lines.map((line) => {
+  const timings = lines.map((line) => {
     const duration = typingDuration(line.length)
     const delay = cursorDelay
     cursorDelay += duration + 0.15
     return { duration, delay }
   })
+  return { timings, cursorDelay }
+}
+
+function PhaseVisual({ index, status }) {
+  const v = PHASE_VISUALS[index]
+  const [cycle, setCycle] = useState(0)
+
+  useEffect(() => {
+    if (!v || status !== 'active') return
+    const { cursorDelay } = getTimings(v.lines)
+    const totalMs = (cursorDelay + 1.6) * 1000
+    const id = setInterval(() => setCycle((c) => c + 1), totalMs)
+    return () => clearInterval(id)
+  }, [v, status])
+
+  if (!v || status === 'pending') return null
+
+  const { timings, cursorDelay } = getTimings(v.lines)
 
   return (
     <div className={`phase-visual phase-visual--${status}`} style={{ '--phase-color': v.color }}>
@@ -79,7 +94,7 @@ function PhaseVisual({ index, status }) {
         <span className="phase-visual-dot" />
       </div>
       <div className="phase-visual-content">
-        <div className="phase-visual-body">
+        <div className="phase-visual-body" key={status === 'active' ? cycle : 'static'}>
           {v.lines.map((line, i) => (
             <div
               key={i}
