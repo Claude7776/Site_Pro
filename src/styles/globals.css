@@ -1269,17 +1269,25 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:56px
 }
 
 .phase-visual-line {
+  display: block;
   color: var(--phase-color, var(--sky));
-  opacity: 0;
-  animation: term-line-in .2s ease forwards;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
+  width: 0;
+  max-width: calc(var(--chars, 0) * 1ch);
+  animation-name: typing-line;
+  animation-fill-mode: forwards;
+}
+
+@keyframes typing-line {
+  from { width: 0; }
+  to   { width: calc(var(--chars, 0) * 1ch); }
 }
 
 .phase-visual--done .phase-visual-line {
   opacity: .8;
   animation: none;
+  width: calc(var(--chars, 0) * 1ch);
 }
 
 .phase-visual-cursor {

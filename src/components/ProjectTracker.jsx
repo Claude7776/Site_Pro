@@ -55,9 +55,21 @@ const PHASE_VISUALS = [
   },
 ]
 
+function typingDuration(len) {
+  return Math.min(1.4, 0.45 + len * 0.03)
+}
+
 function PhaseVisual({ index, status }) {
   const v = PHASE_VISUALS[index]
   if (!v || status === 'pending') return null
+
+  let cursorDelay = 0
+  const timings = v.lines.map((line) => {
+    const duration = typingDuration(line.length)
+    const delay = cursorDelay
+    cursorDelay += duration + 0.15
+    return { duration, delay }
+  })
 
   return (
     <div className={`phase-visual phase-visual--${status}`} style={{ '--phase-color': v.color }}>
@@ -72,12 +84,23 @@ function PhaseVisual({ index, status }) {
             <div
               key={i}
               className="phase-visual-line"
-              style={status === 'active' ? { animationDelay: `${i * 0.22}s` } : {}}
+              style={
+                status === 'active'
+                  ? {
+                      '--chars': line.length,
+                      animationDuration: `${timings[i].duration}s`,
+                      animationDelay: `${timings[i].delay}s`,
+                      animationTimingFunction: `steps(${Math.max(line.length, 1)}, end)`,
+                    }
+                  : { '--chars': line.length }
+              }
             >
               {line}
             </div>
           ))}
-          {status === 'active' && <span className="phase-visual-cursor" />}
+          {status === 'active' && (
+            <span className="phase-visual-cursor" style={{ animationDelay: `${cursorDelay}s` }} />
+          )}
         </div>
       </div>
     </div>
