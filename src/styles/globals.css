@@ -108,8 +108,8 @@ nav.main-nav .inner { display: flex; align-items: center; justify-content: space
 .logo-text { display: flex; flex-direction: column; gap: 0; }
 .logo-name { font-size: .88rem; font-weight: 800; letter-spacing: .12em; color: var(--text); line-height: 1.1; }
 .logo-corp { font-size: .68rem; font-weight: 600; letter-spacing: .18em; color: #5BAFD6; line-height: 1.2; }
-.nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
-.nav-links a { font-size: .88rem; font-weight: 500; color: var(--text-muted); transition: var(--transition); position: relative; }
+.nav-links { display: flex; align-items: center; gap: 22px; list-style: none; }
+.nav-links a { font-size: .88rem; font-weight: 500; color: var(--text-muted); transition: var(--transition); position: relative; white-space: nowrap; }
 .nav-links a::after { content:''; position:absolute; bottom:-3px; left:0; right:0; height:1px; background:var(--sky); transform:scaleX(0); transition: var(--transition); transform-origin:left; }
 .nav-links a:hover { color: var(--text); }
 .nav-links a:hover::after { transform: scaleX(1); }
@@ -581,6 +581,62 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:56px
 .fade-up { opacity:0; transform:translateY(28px); transition:opacity .7s ease, transform .7s ease; }
 .fade-up.visible { opacity:1; transform:translateY(0); }
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+/* ── SCANLINE (écrans/terminaux) ──────────────────────────── */
+.scanline { overflow: hidden; }
+.scanline::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; height: 45%;
+  background: linear-gradient(180deg, rgba(56,189,248,0) 0%, rgba(56,189,248,.06) 50%, rgba(56,189,248,0) 100%);
+  pointer-events: none;
+  border-radius: inherit;
+  animation: scan-move 5s linear infinite;
+}
+@keyframes scan-move { 0% { top: -50%; } 100% { top: 105%; } }
+
+/* ── SECOPS ───────────────────────────────────────────────── */
+#secops { padding: 100px 0; }
+.secops-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 28px; align-items: stretch; margin-bottom: 40px; }
+.secops-panel { position: relative; }
+.secops-live {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: 'Space Mono','Courier New',monospace;
+  font-size: .68rem; font-weight: 700; letter-spacing: .1em;
+  color: #22c55e; margin-left: auto;
+}
+.secops-live-dot { width: 6px; height: 6px; border-radius: 50%; background: #22c55e; animation: pulse 1.6s infinite; flex-shrink: 0; }
+.secops-line {
+  font-family: 'Space Mono','Courier New',monospace;
+  font-size: .8rem; line-height: 1.5;
+  padding: 8px 0; border-bottom: 1px solid var(--border);
+  white-space: normal; overflow-wrap: break-word; overflow: visible;
+}
+.secops-line:last-child { border-bottom: none; }
+.secops-stats-grid { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: repeat(2, 1fr); gap: 16px; height: 100%; }
+.secops-stat {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);
+  padding: 20px; display: flex; flex-direction: column; gap: 8px; justify-content: center;
+  transition: var(--transition);
+}
+.secops-stat:hover { border-color: var(--border2); transform: translateY(-3px); }
+.secops-stat-icon { color: var(--sky); }
+.secops-stat-num {
+  font-family: 'Space Grotesk', sans-serif; font-size: 1.7rem; font-weight: 700; color: var(--text);
+}
+.secops-stat-label { font-size: .78rem; color: var(--text-muted); }
+.secops-practices {
+  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  padding-top: 28px; border-top: 1px solid var(--border);
+}
+.secops-practices-label { font-size: .82rem; color: var(--text-dim); font-weight: 600; white-space: nowrap; }
+.secops-practices-list { display: flex; flex-wrap: wrap; gap: 10px; }
+@media (max-width: 860px) {
+  .secops-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 520px) {
+  .secops-stats-grid { grid-template-columns: 1fr 1fr; }
+}
 
 /* ── EXPERTISE ────────────────────────────────────────────── */
 #expertise { padding: 100px 0; background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }

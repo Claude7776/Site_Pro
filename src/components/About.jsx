@@ -132,10 +132,10 @@ export default function About() {
               <span className="gradient-text">livrée sans compromis.</span>
             </h2>
             <p>
-              Sky Blue Corporation est une société de conseil et d'ingénierie IT spécialisée dans la
-              conception de solutions numériques à forte valeur ajoutée. Nous intervenons là où la
-              technologie crée un avantage concret : des systèmes qui fonctionnent, des processus qui
-              s'automatisent, des données qui restent sécurisées.
+              Sky Blue Corporation est une société de conseil et d'ingénierie spécialisée en
+              infrastructure numérique et cybersécurité. Nous intervenons là où la technologie crée
+              un avantage concret : des systèmes durcis et supervisés, des processus qui
+              s'automatisent, des données qui restent protégées.
             </p>
             <p>
               Notre approche est résolument hybride : nous combinons expertise logicielle, maîtrise des

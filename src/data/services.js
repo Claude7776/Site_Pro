@@ -1,25 +1,32 @@
 export const services = [
   {
-    id: 'saas',
-    icon: 'briefcase',
-    title: 'Développement SaaS & CRM',
-    description: "Conception et développement d'applications web métiers sur-mesure : CRM complets, plateformes de gestion, tableaux de bord analytiques et workflows automatisés.",
-    tags: ['React', 'Node.js', 'PostgreSQL', 'REST API', 'Socket.IO'],
-    featured: true,
-  },
-  {
     id: 'security',
     icon: 'shield',
-    title: 'Cybersécurité & Audit IT',
-    description: "Audit de sécurité complet de vos systèmes, mise en place de firewalls, détection d'intrusions, hardening serveur et conformité RGPD.",
-    tags: ['pfSense', 'Firewall', 'Monitoring', 'Pentest'],
+    title: 'Cybersécurité & Durcissement Infrastructure',
+    description: "Audit de sécurité complet, durcissement (hardening) serveur et réseau, firewalls et détection d'intrusions, supervision continue et conformité RGPD.",
+    tags: ['pfSense', 'IDS/IPS', 'Hardening', 'SIEM', 'Pentest'],
+    featured: true,
   },
   {
     id: 'cloud',
     icon: 'cloud',
     title: 'Infrastructure & Cloud',
-    description: "Déploiement et administration de serveurs Linux, containerisation Docker, configuration Nginx, gestion VPS et pipelines CI/CD.",
+    description: "Déploiement et administration de serveurs Linux, containerisation Docker, configuration Nginx, gestion VPS, TLS et pipelines CI/CD sécurisés.",
     tags: ['Docker', 'Linux', 'Nginx', 'VPS', 'SSL/TLS'],
+  },
+  {
+    id: 'sysadmin',
+    icon: 'globe',
+    title: 'Administration Systèmes & Réseaux',
+    description: "Configuration et maintenance de réseaux d'entreprise, gestion des accès, administration Active Directory, segmentation VLAN, VPN et supervision continue.",
+    tags: ['Sysadmin', 'VLAN', 'VPN', 'Active Directory'],
+  },
+  {
+    id: 'saas',
+    icon: 'briefcase',
+    title: 'Développement SaaS & CRM',
+    description: "Conception et développement d'applications web métiers sur-mesure : CRM complets, plateformes de gestion, tableaux de bord analytiques et workflows automatisés.",
+    tags: ['React', 'Node.js', 'PostgreSQL', 'REST API', 'Socket.IO'],
   },
   {
     id: 'automation',
@@ -34,12 +41,5 @@ export const services = [
     title: 'Intégration API & Connecteurs',
     description: "Connexion et orchestration de vos outils métiers via APIs professionnelles. Stripe, signature électronique, emails transactionnels, SMS, webhooks.",
     tags: ['Stripe API', 'REST', 'OAuth2', 'Mailjet'],
-  },
-  {
-    id: 'sysadmin',
-    icon: 'globe',
-    title: 'Administration Systèmes & Réseaux',
-    description: "Configuration et maintenance de réseaux d'entreprise, gestion des accès, administration Active Directory, VLAN, VPN et supervision continue.",
-    tags: ['Sysadmin', 'VLAN', 'VPN', 'Active Directory'],
   },
 ]

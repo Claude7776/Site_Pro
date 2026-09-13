@@ -8,12 +8,12 @@ export default function Services() {
         <div className="fade-up">
           <div className="tag">Nos services</div>
           <h2 className="section-title">
-            Une expertise IT<br />
-            <span className="gradient-text">à 360°</span>
+            Infrastructure & sécurité,<br />
+            <span className="gradient-text">au cœur de chaque projet.</span>
           </h2>
           <p className="section-sub">
-            De la conception au déploiement, nous couvrons chaque couche de votre infrastructure
-            digitale avec la précision d'un cabinet de conseil international.
+            Chaque couche de votre infrastructure digitale — réseau, serveur, application — est
+            durcie et supervisée dès la conception, avec la rigueur d'un cabinet de conseil international.
           </p>
         </div>
         <div className="services-grid fade-up">

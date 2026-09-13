@@ -1,5 +1,43 @@
 export const expertiseDomains = [
   {
+    id: 'security',
+    icon: 'lock',
+    title: 'Cybersécurité & Sécurité Infrastructure',
+    items: [
+      'Durcissement (hardening) d\'infrastructures réseau et serveurs',
+      'Analyse de logs, surveillance SIEM et réponse aux incidents',
+      'Segmentation réseau, IDS/IPS et politiques de moindre privilège',
+      'Laboratoires offensifs/défensifs : TryHackMe, Hack The Box',
+      'Simulation SOC — détection, triage et analyse d\'incidents',
+    ],
+    tags: ['pfSense', 'IDS/IPS', 'SOC', 'SIEM', 'TryHackMe', 'HackTheBox', 'Fail2Ban'],
+  },
+  {
+    id: 'network',
+    icon: 'globe',
+    title: 'Réseaux & Infrastructure',
+    items: [
+      'Configuration de réseaux d\'entreprise (DNS, DHCP, Pare-feu)',
+      'Déploiement pfSense, Nginx Reverse Proxy',
+      'Segmentation VLAN et durcissement des accès équipements',
+      'Pi-hole sur réseau local — blocage publicités & trackers',
+      'Audit adressages réseau et surveillance des équipements',
+    ],
+    tags: ['DNS', 'DHCP', 'pfSense', 'Reverse Proxy', 'Pi-hole', 'VLAN'],
+  },
+  {
+    id: 'iam',
+    icon: 'building',
+    title: 'Gestion des Identités & IAM',
+    items: [
+      'Administration Active Directory et LDAP',
+      'Gestion centralisée des utilisateurs et permissions (RBAC)',
+      'Intégration services Linux avec annuaires d\'entreprise',
+      'Environnements hybrides Windows / Linux',
+    ],
+    tags: ['Active Directory', 'LDAP', 'RBAC', 'Samba', 'DNS', 'DHCP'],
+  },
+  {
     id: 'sysadmin',
     icon: 'monitor',
     title: 'Administration Systèmes & Serveurs',
@@ -10,30 +48,6 @@ export const expertiseDomains = [
       'Surveillance des performances : Glances, Atop, logs système',
     ],
     tags: ['Linux Ubuntu', 'Samba', 'Nginx', 'Pi-hole', 'ClamAV', 'Cockpit'],
-  },
-  {
-    id: 'network',
-    icon: 'globe',
-    title: 'Réseaux & Infrastructure',
-    items: [
-      'Configuration de réseaux d\'entreprise (DNS, DHCP, Pare-feu)',
-      'Déploiement pfSense, Nginx Reverse Proxy',
-      'Pi-hole sur réseau local — blocage publicités & trackers',
-      'Audit adressages réseau et surveillance des équipements',
-    ],
-    tags: ['DNS', 'DHCP', 'pfSense', 'Reverse Proxy', 'Pi-hole', 'VLAN'],
-  },
-  {
-    id: 'security',
-    icon: 'lock',
-    title: 'Cybersécurité',
-    items: [
-      'Sécurisation d\'infrastructures réseau et serveurs',
-      'Analyse de logs, surveillance et réponse aux incidents',
-      'Laboratoires pratiques : TryHackMe, Hack The Box',
-      'Simulation SOC — Détection et analyse d\'incidents',
-    ],
-    tags: ['pfSense', 'IDS/IPS', 'SOC', 'TryHackMe', 'HackTheBox', 'Fail2Ban'],
   },
   {
     id: 'devops',
@@ -103,18 +117,6 @@ export const expertiseDomains = [
       'Documentation technique complète des projets livrés',
     ],
     tags: ['Jest', 'Vitest', 'UML', 'MERISE', 'Documentation'],
-  },
-  {
-    id: 'iam',
-    icon: 'building',
-    title: 'Gestion des Identités & IAM',
-    items: [
-      'Administration Active Directory et LDAP',
-      'Gestion centralisée des utilisateurs et permissions (RBAC)',
-      'Intégration services Linux avec annuaires d\'entreprise',
-      'Environnements hybrides Windows / Linux',
-    ],
-    tags: ['Active Directory', 'LDAP', 'RBAC', 'Samba', 'DNS', 'DHCP'],
   },
 ]
 

@@ -70,8 +70,8 @@ export default function Footer() {
           <div className="footer-col">
             <h5>Contact</h5>
             <ul>
-              <li><a href="codecld@proton.me">contact@skyblue-corp.io</a></li>
-              <li><a href="https://linkedin.com/company/skyblue-corporation">LinkedIn</a></li>
+              <li><a href="mailto:codecld@proton.me">contact@skyblue-corp.io</a></li>
+              <li><a href="https://linkedin.com/company/skyblue-corporation" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
               <li><a href="tel:+212690565512">Réserver un appel</a></li>
             </ul>
           </div>

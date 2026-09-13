@@ -9,6 +9,7 @@ import Hero from './components/Hero'
 import TechBar from './components/TechBar'
 import Services from './components/Services'
 import About from './components/About'
+import SecOps from './components/SecOps'
 import Expertise from './components/Expertise'
 import Projects from './components/Projects'
 import Testimonials from './components/Testimonials'
@@ -81,6 +82,7 @@ export default function App() {
         <TechBar />
         <Services />
         <About />
+        <SecOps />
         <Expertise />
         <Projects />
         <Testimonials />

@@ -84,6 +84,7 @@ export default function Navbar() {
           <ul className="nav-links">
             <li><a href="#services">Services</a></li>
             <li><a href="#about">À propos</a></li>
+            <li><a href="#secops">Sécurité</a></li>
             <li><a href="#expertise">Expertise</a></li>
             <li><a href="#projects">Réalisations</a></li>
             <li><a href="#blog">Blog</a></li>
@@ -111,6 +112,7 @@ export default function Navbar() {
       <nav className={`mobile-nav${menuOpen ? ' open' : ''}`} aria-label="Menu mobile">
         <a href="#services" onClick={closeMenu}>Services</a>
         <a href="#about" onClick={closeMenu}>À propos</a>
+        <a href="#secops" onClick={closeMenu}>Sécurité</a>
         <a href="#expertise" onClick={closeMenu}>Expertise</a>
         <a href="#projects" onClick={closeMenu}>Réalisations</a>
         <a href="#blog" onClick={closeMenu}>Blog</a>

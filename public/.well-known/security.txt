@@ -1,0 +1,5 @@
+Contact: mailto:codecld@proton.me
+Expires: 2027-09-14T00:00:00.000Z
+Preferred-Languages: fr, en
+Canonical: https://skyblue-corp.io/.well-known/security.txt
+Policy: https://skyblue-corp.io/politique-confidentialite

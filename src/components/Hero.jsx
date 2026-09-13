@@ -59,17 +59,17 @@ export default function Hero() {
           <div className="hero-content">
             <div className="hero-badge">
               <span className="hero-badge-dot" />
-              Vivre dans un Univers Numérique · 2026
+              Digital Infrastructure & Security · 2026
             </div>
             <h1 className="hero-title">
-              Architectes de<br />
-              <span className="gradient-text">solutions IT</span><br />
-              qui transforment.
+              Architectes<br />
+              d'<span className="gradient-text">infrastructures sécurisées</span><br />
+              qui tiennent la charge.
             </h1>
             <p className="hero-sub">
-              Sky Blue Corporation conçoit, construit et sécurise les systèmes d'information des entreprises
-              modernes. Du CRM sur-mesure à l'infrastructure serveur, nous livrons des solutions robustes,
-              scalables et prêtes à l'échelle.
+              Sky Blue Corporation conçoit, durcit et supervise les systèmes d'information des entreprises
+              modernes. Du firewall au CRM sur-mesure, chaque couche — réseau, serveur, application — est
+              pensée sécurité by design, robuste et prête à l'échelle.
             </p>
             <div className="hero-actions">
               <a href="#contact" className="btn-primary">Démarrer un projet →</a>
@@ -85,20 +85,20 @@ export default function Hero() {
                 <span className="stat-label">Satisfaction client</span>
               </div>
               <div className="stat-item">
-                <CountUp target={8} suffix="+" />
-                <span className="stat-label">Domaines d'expertise</span>
+                <CountUp target={15} suffix="+" />
+                <span className="stat-label">Systèmes durcis & sécurisés</span>
               </div>
             </div>
           </div>
 
           <div className="hero-visual">
-            <div className="hero-card">
+            <div className="hero-card scanline">
               <div className="card-header">
                 <div className="card-dot" style={{ background: '#ef4444' }} />
                 <div className="card-dot" style={{ background: '#f59e0b' }} />
                 <div className="card-dot" style={{ background: '#22c55e' }} />
                 <span style={{ fontSize: '.75rem', color: 'var(--text-dim)', marginLeft: 8 }}>
-                  sky-blue-corp ~ infra-deploy
+                  sky-blue-corp ~ secops-monitor
                 </span>
               </div>
               <div className="terminal-line">
