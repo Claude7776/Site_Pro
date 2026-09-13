@@ -82,7 +82,8 @@ export default function Projects() {
             <span className="gradient-text">déployés, opérationnels.</span>
           </h2>
           <p className="section-sub">
-            Des solutions réelles, en production, qui résolvent de vrais problèmes métiers.
+            Des solutions réelles — en production ou en cours de développement — qui résolvent de
+            vrais problèmes métiers.
           </p>
         </div>
         <div className="projects-grid fade-up">
@@ -104,8 +105,8 @@ export default function Projects() {
               <div className="project-body">
                 <div className="project-body-top">
                   <div className="project-icon-wrap" style={{ width: 36, height: 36, fontSize: '1rem' }}><DataIcon name={p.icon} /></div>
-                  <span className={`project-status ${p.status === 'live' ? 'status-live' : 'status-done'}`}>
-                    {p.status === 'live' ? 'En production' : 'Livré'}
+                  <span className={`project-status ${p.status === 'live' ? 'status-live' : p.status === 'wip' ? 'status-wip' : 'status-done'}`}>
+                    {p.status === 'live' ? 'En production' : p.status === 'wip' ? 'En cours' : 'Livré'}
                   </span>
                 </div>
                 <h3>{p.title}</h3>
