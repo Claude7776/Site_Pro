@@ -941,6 +941,39 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:56px
 .testi-info strong { font-size:.88rem; display:block; margin-bottom:2px; }
 .testi-info span { font-size:.78rem; color:var(--text-dim); }
 
+/* ── AVIS CLIENT (formulaire) ─────────────────────────────── */
+.testi-cta { display:flex; justify-content:center; margin-top:40px; }
+.review-toggle-btn {
+  display:inline-flex; align-items:center; gap:8px;
+  background:var(--surface); color:var(--sky);
+  font-weight:600; font-size:.9rem;
+  padding:12px 24px; border-radius:10px;
+  border:1px solid var(--border2); cursor:pointer;
+  transition:var(--transition);
+}
+.review-toggle-btn:hover { background:var(--sky-glow); transform:translateY(-2px); }
+.review-form-card {
+  max-width:560px; margin:28px auto 0;
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--radius-lg); padding:32px;
+}
+.review-form-card h4 { font-size:1.1rem; margin-bottom:4px; }
+.review-form-card .form-note-top { font-size:.85rem; color:var(--text-muted); margin-bottom:20px; }
+.star-picker { display:flex; gap:6px; }
+.star-btn {
+  background:none; border:none; cursor:pointer; padding:0; line-height:1;
+  font-size:1.9rem; color:var(--text-dim); transition:color .15s ease, transform .15s ease;
+}
+.star-btn:hover, .star-btn.active { color:#f59e0b; transform:scale(1.08); }
+.review-form-actions { display:flex; gap:10px; align-items:center; }
+.review-form-actions .btn-submit { flex:1; }
+.btn-cancel {
+  padding:14px 18px; background:transparent; color:var(--text-muted);
+  border:1px solid var(--border); border-radius:10px; font-size:.9rem; font-weight:600;
+  cursor:pointer; transition:var(--transition);
+}
+.btn-cancel:hover { border-color:var(--border2); color:var(--text); }
+
 /* ── BLOG ─────────────────────────────────────────────────── */
 #blog { padding:100px 0; background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
 .blog-head { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:48px; flex-wrap:wrap; gap:16px; }
