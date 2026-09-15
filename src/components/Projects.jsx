@@ -1,6 +1,13 @@
 import { projects } from '../data/projects'
 import { DataIcon } from './icons'
 
+const STATUS_MAP = {
+  live: { label: 'En production', cls: 'status-live' },
+  mvp:  { label: 'MVP',            cls: 'status-mvp' },
+  wip:  { label: 'En cours',       cls: 'status-wip' },
+  done: { label: 'Livré',          cls: 'status-done' },
+}
+
 function Screenshot({ src, redact = [] }) {
   return (
     <div className="project-screenshot">
@@ -105,8 +112,8 @@ export default function Projects() {
               <div className="project-body">
                 <div className="project-body-top">
                   <div className="project-icon-wrap" style={{ width: 36, height: 36, fontSize: '1rem' }}><DataIcon name={p.icon} /></div>
-                  <span className={`project-status ${p.status === 'live' ? 'status-live' : p.status === 'wip' ? 'status-wip' : 'status-done'}`}>
-                    {p.status === 'live' ? 'En production' : p.status === 'wip' ? 'En cours' : 'Livré'}
+                  <span className={`project-status ${(STATUS_MAP[p.status] || STATUS_MAP.done).cls}`}>
+                    {(STATUS_MAP[p.status] || STATUS_MAP.done).label}
                   </span>
                 </div>
                 <h3>{p.title}</h3>

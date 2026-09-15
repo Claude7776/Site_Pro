@@ -3,9 +3,9 @@ export const projects = [
     id: 'compta-gabon-ia',
     icon: 'robot',
     title: 'Compta Gabon IA — ERP comptable piloté par IA & experts humains',
-    description: "ERP de gestion comptable et financière actuellement en développement pour les entreprises gabonaises : des agents IA automatisent le rapprochement bancaire, la saisie et la catégorisation des écritures, tandis qu'un expert-comptable valide systématiquement les opérations sensibles. L'objectif : réduire drastiquement le temps de tenue comptable sans jamais retirer l'humain de la boucle de décision.",
+    description: "ERP de gestion comptable et financière disponible en version MVP pour les entreprises gabonaises : des agents IA automatisent le rapprochement bancaire, la saisie et la catégorisation des écritures, tandis qu'un expert-comptable valide systématiquement les opérations sensibles. L'objectif : réduire drastiquement le temps de tenue comptable sans jamais retirer l'humain de la boucle de décision.",
     stack: ['React', 'Node.js', 'PostgreSQL', 'IA générative', 'n8n', 'RBAC'],
-    status: 'wip',
+    status: 'mvp',
     terminal: [
       { type: 'cmd',  text: 'node ai-agent.js --module rapprochement' },
       { type: 'ok',   text: '128 écritures catégorisées automatiquement' },
