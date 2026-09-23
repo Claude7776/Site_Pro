@@ -193,7 +193,11 @@ export default function Testimonials() {
               <div className="testi-author">
                 <div className="testi-avatar">{t.avatar}</div>
                 <div className="testi-info">
-                  <strong>{t.author}</strong>
+                  <strong>
+                    {t.instagram ? (
+                      <a href={t.instagram} target="_blank" rel="noopener noreferrer">{t.author}</a>
+                    ) : t.author}
+                  </strong>
                   <span>{t.company}</span>
                 </div>
               </div>
