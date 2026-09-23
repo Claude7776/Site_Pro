@@ -223,6 +223,15 @@ export const DressIcon = (p) => (
   </Icon>
 )
 
+export const ScissorsIcon = (p) => (
+  <Icon {...p}>
+    <circle cx="6" cy="6" r="2.5" />
+    <circle cx="6" cy="18" r="2.5" />
+    <path d="M8.1 7.4 20 17" />
+    <path d="M8.1 16.6 20 7" />
+  </Icon>
+)
+
 export const RadarIcon = (p) => (
   <Icon {...p}>
     <circle cx="12" cy="12" r="8.5" />
@@ -323,6 +332,7 @@ export const ICON_MAP = {
   robot: RobotIcon,
   chatBubble: ChatBubbleIcon,
   dress: DressIcon,
+  scissors: ScissorsIcon,
   radar: RadarIcon,
   camera: CameraIcon,
   picture: PictureIcon,

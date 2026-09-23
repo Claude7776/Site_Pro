@@ -32,6 +32,17 @@ export const projects = [
     terminalColor: '#ec4899',
   },
   {
+    id: 'cappinis',
+    icon: 'scissors',
+    title: "Cappini's Hair & Beauty — Plateforme web salon de coiffure (Italie)",
+    description: "Plateforme web complète pour un salon de coiffure et de beauté haut de gamme en Toscane : vitrine premium, catalogue des prestations avec tarifs et durées, galerie de réalisations, boutique produits et réservation en ligne 24h/24 (choix du service, du coiffeur et du créneau, disponibilités en temps réel, confirmation instantanée). Site optimisé SEO local avec données structurées HairSalon.",
+    stack: ['Next.js', 'React', 'Tailwind CSS', 'Réservation en ligne', 'SEO local', 'Schema.org'],
+    status: 'live',
+    site: 'https://cappinis.business/',
+    instagram: 'https://www.instagram.com/cappinis_hairandbeauty',
+    screenshot: '/cappinis.jpg',
+  },
+  {
     id: 'CRM',
     icon: 'briefcase',
     title: 'CRM — Plateforme de gestion artisans',
